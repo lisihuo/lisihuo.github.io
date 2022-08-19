@@ -145,7 +145,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2022/08/18/JavaWeb/">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2022/08/19/%E9%9B%86%E5%90%88/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -159,7 +159,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/2022/08/18/JavaWeb/" class="post-title-link" itemprop="url">Untitled</a>
+            <a href="/2022/08/19/%E9%9B%86%E5%90%88/" class="post-title-link" itemprop="url">集合</a>
         </h2>
 
         <div class="post-meta">
@@ -168,543 +168,10 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">Posted on</span>
+              
 
-              <time title="Created: 2022-08-18 13:30:00" itemprop="dateCreated datePublished" datetime="2022-08-18T13:30:00+08:00">2022-08-18</time>
+              <time title="Created: 2022-08-19 12:17:52 / Modified: 12:18:20" itemprop="dateCreated datePublished" datetime="2022-08-19T12:17:52+08:00">2022-08-19</time>
             </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2022-03-03 11:24:53" itemprop="dateModified" datetime="2022-03-03T11:24:53+08:00">2022-03-03</time>
-              </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h2 id="系统架构"><a href="#系统架构" class="headerlink" title="系统架构"></a>系统架构</h2><ol>
-<li><p>系统架构包括什么形式</p>
-<ul>
-<li><p>C&#x2F;S系统架构(Client&#x2F;Server)</p>
-<p>比如：QQ</p>
-<ul>
-<li><p>优点：速度快，服务器压力小，基本数据都在本地上，需要传输的数据量很小</p>
-</li>
-<li><p>缺点：升级维护比较复杂</p>
-</li>
-</ul>
-</li>
-<li><p>B&#x2F;S系统架构(Browser&#x2F;Server)</p>
-<p>比如：<a target="_blank" rel="noopener" href="http://www.baidu.com/">www.baidu.com</a></p>
-<ul>
-<li>优点：升级维护比较方便，成本比较低</li>
-<li>缺点：速度慢，所有的数据都是需要服务器响应</li>
-</ul>
-<p>这两个架构并没有优劣之分，各自在不同的领域发挥着至关重要的作用</p>
-</li>
-</ul>
-</li>
-<li><p>B&#x2F;S系统架构的通信原理</p>
-<p>​		打开浏览器，输入网址，点击搜索，就会跳转到相应的网址</p>
-<ul>
-<li><p>网址：<a target="_blank" rel="noopener" href="https://www.baidu.com/">https://www.baidu.com</a></p>
-</li>
-<li><p>域名：<a target="_blank" rel="noopener" href="http://www.baidu.com/">www.baidu.com</a></p>
-<p>输入网址之后，域名解析器就会将域名解析成相应的ip地址(计算机在网络中的唯一标识)和端口号(计算机中的软件的标识)等</p>
-</li>
-</ul>
-</li>
-<li><p>通信步驟</p>
-<p>第一步：首先是打开浏览器输入统一资源定位符(URL),如：<a target="_blank" rel="noopener" href="http://www.baidu.com/">http://www.baidu.com</a></p>
-<p>第二步：域名解析器会将URL解析成：<a target="_blank" rel="noopener" href="http://180.101.49.12/index.html">http://180.101.49.12:80/index.html</a></p>
-<p>第三步：浏览器就会在网络中搜索180.101.49.12这个主机和80所对应的软件</p>
-<p>第四步：80所对应的软件得知请求的资源名是index.html，服务器就会将index.html这个文件响应到浏览器上</p>
-<p>第五步：浏览器接收到来自服务器的响应，就会进行渲染，并在页面上展示效果</p>
-</li>
-</ol>
-<h2 id="HTTP"><a href="#HTTP" class="headerlink" title="HTTP"></a>HTTP</h2><p>​		超文本传输协议(Hyper Text Transfer Protocol)，是一个简单的请求-响应的协议。它定义了客户端和服务器端通信时，发送的数据格式。</p>
-<h3 id="HTTP的特点："><a href="#HTTP的特点：" class="headerlink" title="HTTP的特点："></a>HTTP的特点：</h3><ul>
-<li>基于TCP&#x2F;IP的高级协议</li>
-<li>默认端口是80</li>
-<li>基于请求-响应的模型：一次请求对应一次响应</li>
-<li>无状态的：每次请求之间相互独立，不能交互数据</li>
-<li>HTTP允许传输任意类型的对象，正在传输的类型由Content-type家以标记</li>
-<li>客户向服务器请求服务时，只需传送请求方式和路径。请求方法常用的有GET、HEAD、POST</li>
-</ul>
-<h3 id="HTTP版本："><a href="#HTTP版本：" class="headerlink" title="HTTP版本："></a>HTTP版本：</h3><ul>
-<li><p>1.0版本：每次请求都会建立新的连接</p>
-</li>
-<li><p>1.1版本：可以重复利用之前建立的连接</p>
-</li>
-</ul>
-<h3 id="HTTP请求数据的组成"><a href="#HTTP请求数据的组成" class="headerlink" title="HTTP请求数据的组成"></a>HTTP请求数据的组成</h3><p><img src="C:\Users\liyi2\AppData\Roaming\Typora\typora-user-images\image-20220110103142994.png" alt="image-20220110103142994"></p>
-<p>​		请求行+请求头+空行+请求体</p>
-<ul>
-<li><p>请求行：由传输方法（GET&#x2F;POST），URL(统一资源定位符)和协议版本构成</p>
-<ul>
-<li><p>GET方法：在网页地址栏中会显示传值，一般来说，我们通过超链接进行访问网页，都是GET方法</p>
-</li>
-<li><p>POST方法：在网页地址栏中不会显示传值,一般来说，表单提交数据都是通过POST方法</p>
-<p>一般可以理解GET方法都是用来查询数据，POST方法都是用来提交数据，get方法提交速度比post快</p>
-<p>get方法后的参数数量有限制，一般不超过1k</p>
-<p>post方法可以在请求的实体内容中向服务器发送数据，传输数量无限制</p>
-</li>
-</ul>
-</li>
-<li><p>请求头：描述客户端请求哪台主机，以及<strong>客户端的一些环境信息</strong>等</p>
-<ul>
-<li>Accept: text&#x2F;html,image&#x2F;* 【浏览器告诉服务器，它支持的数据类型】 </li>
-<li>Accept-Charset: ISO-8859-1 【浏览器告诉服务器，它支持哪种<strong>字符集</strong>】 </li>
-<li>Accept-Encoding: gzip,compress 【浏览器告诉服务器，它支持的<strong>压缩格式</strong>】 </li>
-<li>Accept-Language: en-us,zh-cn 【浏览器告诉服务器，它的语言环境】 </li>
-<li>Host: <a href="http://www.it315.org:80【浏览器告诉服务器，它的想访问哪台主机】">www.it315.org:80【浏览器告诉服务器，它的想访问哪台主机】</a> </li>
-<li>If-Modified-Since: Tue, 11 Jul 2000 18:23:51 GMT【浏览器告诉服务器，缓存数据的时间】 </li>
-<li>Referer: <a target="_blank" rel="noopener" href="http://www.it315.org/index.jsp%E3%80%90%E6%B5%8F%E8%A7%88%E5%99%A8%E5%91%8A%E8%AF%89%E6%9C%8D%E5%8A%A1%E5%99%A8%EF%BC%8C%E5%AE%A2%E6%88%B7%E6%9C%BA%E6%98%AF%E4%BB%8E%E9%82%A3%E4%B8%AA%E9%A1%B5%E9%9D%A2%E6%9D%A5%E7%9A%84---**%E5%8F%8D%E7%9B%97%E9%93%BE**%E3%80%91">http://www.it315.org/index.jsp【浏览器告诉服务器，客户机是从那个页面来的---**反盗链**】</a> </li>
-<li>User-Agent: Mozilla&#x2F;4.0 (compatible; MSIE 5.5; Windows NT 5.0)【浏览器告诉服务器，浏览器的内核是什么</li>
-<li>Cookie【浏览器告诉服务器，<strong>带来的Cookie是什么</strong>】 </li>
-<li>Connection: close&#x2F;Keep-Alive 【浏览器告诉服务器，请求完后是断开链接还是保持链接】 </li>
-<li>Date: Tue, 11 Jul 2000 18:23:51 GMT【浏览器告诉服务器，请求的时间】</li>
-</ul>
-</li>
-<li><p>空行：回车符或者换行符，主要目的是让服务器知道，下面不在会有请求头</p>
-</li>
-<li><p>请求体：POST传输方法中会通过传值的方式（key value的形式）体现</p>
-</li>
-</ul>
-<h3 id="HTTP响应数据的组成"><a href="#HTTP响应数据的组成" class="headerlink" title="HTTP响应数据的组成"></a>HTTP响应数据的组成</h3><p><img src="C:\Users\liyi2\AppData\Roaming\Typora\typora-user-images\image-20220110103202135.png" alt="image-20220110103202135"></p>
-<p>​	状态行+多个消息头+空行+实体内容</p>
-<ul>
-<li>状态行：用于描述服务器请求的处理结果<ul>
-<li>格式： HTTP版本号　状态码　原因叙述    如（HTTP&#x2F;1.1 200 OK）</li>
-</ul>
-</li>
-<li>消息头：用于描述服务器的基本信息，以及数据描述，服务器可以通过数据的描述信息，可以通知客户端如何处理其返回的数据<ul>
-<li>Location: <a target="_blank" rel="noopener" href="http://www.it315.org/index.jsp">http://www.it315.org/index.jsp</a> 【服务器告诉浏览器<strong>要跳转到哪个页面</strong>】 </li>
-<li>Server:apache tomcat【服务器告诉浏览器，服务器的型号是什么】 </li>
-<li>Content-Encoding: gzip 【服务器告诉浏览器<strong>数据压缩的格式</strong>】 </li>
-<li>Content-Length: 80 【服务器告诉浏览器回送数据的长度】 </li>
-<li>Content-Language: zh-cn 【服务器告诉浏览器，服务器的语言环境】 </li>
-<li>Content-Type: text&#x2F;html; charset&#x3D;GB2312 【服务器告诉浏览器，<strong>回送数据的类型</strong>】 </li>
-<li>Last-Modified: Tue, 11 Jul 2000 18:23:51 GMT【服务器告诉浏览器该资源上次更新时间】 </li>
-<li>Refresh: 1;url&#x3D;<a target="_blank" rel="noopener" href="http://www.it315.org【服务器告诉浏览器要**定时刷新**】/">http://www.it315.org【服务器告诉浏览器要**定时刷新**】</a> </li>
-<li>Content-Disposition: attachment; filename&#x3D;aaa.zip【服务器告诉浏览器<strong>以下载方式打开数据</strong>】 </li>
-<li>Transfer-Encoding: chunked 【服务器告诉浏览器数据以分块方式回送】 </li>
-<li>Set-Cookie:SS&#x3D;Q0&#x3D;5Lb_nQ; path&#x3D;&#x2F;search【服务器告诉浏览器要<strong>保存Cookie</strong>】 </li>
-<li>Expires: -1【服务器告诉浏览器<strong>不要设置缓存</strong>】 </li>
-<li>Cache-Control: no-cache 【服务器告诉浏览器<strong>不要设置缓存</strong>】 </li>
-<li>Pragma: no-cache 【服务器告诉浏览器<strong>不要设置缓存</strong>】 </li>
-<li>Connection: close&#x2F;Keep-Alive 【服务器告诉浏览器连接方式】 </li>
-<li>Date: Tue, 11 Jul 2000 18:23:51 GMT【服务器告诉浏览器回送数据的时间】</li>
-</ul>
-</li>
-<li>空行：回车符或者换行符</li>
-<li>实体内容：服务器向浏览器返回的数据</li>
-</ul>
-<h2 id="BS结构系统的角色和协议"><a href="#BS结构系统的角色和协议" class="headerlink" title="BS结构系统的角色和协议"></a>BS结构系统的角色和协议</h2><p>​		在地址栏上输入URL的时候，会找到对应的服务器，然后服务器会响应我们的请求，将我们需要的资源返回给浏览器，浏览器进行渲染，展现出来。如果想要展现的是动态的数据，则需要去数据库中查找想要的数据，这里便建立起浏览器，服务器和数据库之间的关系。</p>
-<p>而我们就需要将这三者之间的关系利用起来，编写属于我们自己的web应用</p>
-<ul>
-<li>浏览器和web server之间可以通过HTTP传输协议进行传输</li>
-<li>web server和我们的开发的web app之间有个规范（servlet规范）</li>
-<li>web app和数据库之间有个协议（JDBC）</li>
-</ul>
-<p>这样就可以将浏览器，web server，web app 和数据库关联起来，形成一个web应用</p>
-<h3 id="模拟servlet"><a href="#模拟servlet" class="headerlink" title="模拟servlet"></a>模拟servlet</h3><ul>
-<li>首先我们需要定义一个servlet接口，来为调用者提供服务</li>
-</ul>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">interface</span> <span class="title class_">Servlet</span> &#123;</span><br><span class="line">    <span class="comment">//提供一个服务的方法</span></span><br><span class="line">    <span class="keyword">void</span> <span class="title function_">service</span><span class="params">()</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>然后我们需要编写一个类，实现这个接口</li>
-</ul>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">HelloServlet</span> <span class="keyword">implements</span> <span class="title class_">Servlet</span> &#123;</span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">service</span><span class="params">()</span> &#123;</span><br><span class="line">        System.out.println(<span class="string">&quot;Hello Servlet&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>再定义一个Tomcat服务器</li>
-</ul>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> java.io.IOException;</span><br><span class="line"><span class="keyword">import</span> java.util.Properties;</span><br><span class="line"><span class="keyword">import</span> java.util.Scanner;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Tomcat</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> <span class="keyword">throws</span> IOException, ClassNotFoundException, IllegalAccessException, InstantiationException &#123;</span><br><span class="line">        System.out.println(<span class="string">&quot;Tomcat服务器启动成功!&quot;</span>);</span><br><span class="line"></span><br><span class="line">        <span class="type">String</span> <span class="variable">FILE_NAME</span> <span class="operator">=</span> <span class="string">&quot;web.properties&quot;</span>;</span><br><span class="line">        <span class="comment">/*</span></span><br><span class="line"><span class="comment">            当输入一个网址的时候就会找到对应的网页资源</span></span><br><span class="line"><span class="comment">            如：/HelloServlet   对应的HelloServlet</span></span><br><span class="line"><span class="comment">            这里就会有一个key value的形式，我们可以借助于配置文件</span></span><br><span class="line"><span class="comment">         */</span></span><br><span class="line">        <span class="type">Scanner</span> <span class="variable">scanner</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Scanner</span>(System.in);</span><br><span class="line">        <span class="type">String</span> <span class="variable">key</span> <span class="operator">=</span> scanner.nextLine();</span><br><span class="line"></span><br><span class="line">        <span class="type">Properties</span> <span class="variable">properties</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Properties</span>();</span><br><span class="line">        properties.load(Thread.currentThread().getContextClassLoader().getResourceAsStream(FILE_NAME));</span><br><span class="line">        <span class="comment">//InputStream inputStream = Tomcat.class.getResourceAsStream(&quot;web.properties&quot;);</span></span><br><span class="line">        <span class="comment">//properties.load(inputStream);</span></span><br><span class="line">        <span class="comment">//inputStream.close();</span></span><br><span class="line"></span><br><span class="line">        <span class="comment">//根据key获取value,value是个类名</span></span><br><span class="line">        <span class="type">String</span> <span class="variable">className</span> <span class="operator">=</span> properties.getProperty(key);</span><br><span class="line">        <span class="comment">//根据类名创建对象</span></span><br><span class="line">        <span class="type">Class</span> <span class="variable">clazz</span> <span class="operator">=</span> Class.forName(className);</span><br><span class="line">        <span class="comment">//newInstance()只能是无参构造</span></span><br><span class="line">        <span class="type">Object</span> <span class="variable">obj</span> <span class="operator">=</span> clazz.newInstance();</span><br><span class="line">        <span class="type">Servlet</span> <span class="variable">servlet</span> <span class="operator">=</span> (Servlet)obj;</span><br><span class="line">        <span class="comment">//调用service()方法</span></span><br><span class="line">        servlet.service();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-
-
-<h2 id="Servlet"><a href="#Servlet" class="headerlink" title="Servlet"></a>Servlet</h2><h3 id="Servlet的生命周期"><a href="#Servlet的生命周期" class="headerlink" title="Servlet的生命周期"></a>Servlet的生命周期</h3><ul>
-<li>Servlet什么时候被创建</li>
-<li>Servlet什么时候被销毁</li>
-<li>Servlet创建了几个</li>
-</ul>
-<p>在整个调用Servlet的过程中，我们都没有去new任何一个对象，整个过程都是我们无权干涉的，都是由Tomcat去托管的。</p>
-<p>所以我们需要去知道Servlet对象的整个生命周期（从出生到死亡）</p>
-<ul>
-<li>首先先写一个类来实现Servlet接口</li>
-</ul>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">ServletTest01</span> <span class="keyword">implements</span> <span class="title class_">Servlet</span> &#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="title function_">ServletTest01</span><span class="params">()</span> &#123;</span><br><span class="line">        System.out.println(<span class="string">&quot;构造函数被调用了...&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">init</span><span class="params">(ServletConfig servletConfig)</span> <span class="keyword">throws</span> ServletException &#123;</span><br><span class="line">        System.out.println(<span class="string">&quot;init方法被调用了...&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">public</span> ServletConfig <span class="title function_">getServletConfig</span><span class="params">()</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">null</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">service</span><span class="params">(ServletRequest servletRequest, ServletResponse servletResponse)</span> <span class="keyword">throws</span> ServletException, IOException &#123;</span><br><span class="line">        System.out.println(<span class="string">&quot;service方法被调用了...&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">public</span> String <span class="title function_">getServletInfo</span><span class="params">()</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">null</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">destroy</span><span class="params">()</span> &#123;</span><br><span class="line">        System.out.println(<span class="string">&quot;destroy方法被调用了...&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>然后启动tomcat，在tomcat启动完毕之后输出下面内容，此时servlet对象并没有被创建</li>
-</ul>
-<p><img src="C:\Users\liyi2\AppData\Roaming\Typora\typora-user-images\image-20220104101348238.png" alt="image-20220104101348238"></p>
-<ul>
-<li>但是我们打开配置的网页时，输出以下内容</li>
-</ul>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">构造函数被调用了...</span><br><span class="line">init方法被调用了...</span><br><span class="line">service方法被调用了...</span><br></pre></td></tr></table></figure>
-
-
-
-<p>说明：默认情况下，tomcat启动的时候，servlet对象是不被创建的，当我们对服务器发起一次请求的时候，servlet对象被创建，init方法被调用，service方法也被调用</p>
-<ul>
-<li>接着我们刷新网页，再次对服务器发出请求，控制台输出如下：</li>
-</ul>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">service方法被调用了...</span><br></pre></td></tr></table></figure>
-
-
-
-<p>构造方法只执行了一次，init方法也只执行了一次，说明，servlet是一个单例模式，之后可能会碰到的问题就是，多线程访问一个成员变量的时候，会出现问题</p>
-<ul>
-<li><p>最后，我们关闭服务器，控制台输出以下内容</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">destroy方法被调用了...</span><br></pre></td></tr></table></figure></li>
-</ul>
-<p>说明，服务器关闭，destroy方法会被调用，当然servlet对象也会被销毁，但是，是servlet对先被销毁还是destroy方法先被调用</p>
-<p>我们可以直接看出来，destroy方法是一个实例方法，需要对象去调用，所以servlet对象销毁是在destroy方法调用之后。</p>
-<h3 id="Servlet接口的优化"><a href="#Servlet接口的优化" class="headerlink" title="Servlet接口的优化"></a>Servlet接口的优化</h3><p>​		从上述的servlet的生命周期可以看出，构造方法，init方法和destroy方法都是只调用一次，而service方法，是在每次调用服务器的时候都会被调用，而且是我们可以修来实现自己需要的功能的，所以我们需要在Servlet接口上在封装一层，重写我们需要的方法。</p>
-<p>定义一个公共类，实现Servlet接口中的五个方法，让别的类去继承这个公共类，只需要重写service方法就行了，我们就将service方法定义成抽象方法，为了以后自己所写的servlet类可以直接重写service方法，再将这个类定义成一个抽象类，如下所示</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">abstract</span> <span class="keyword">class</span> <span class="title class_">GenericServletTest</span> <span class="keyword">implements</span> <span class="title class_">Servlet</span> &#123;</span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">init</span><span class="params">(ServletConfig servletConfig)</span> <span class="keyword">throws</span> ServletException &#123;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">public</span> ServletConfig <span class="title function_">getServletConfig</span><span class="params">()</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">null</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">abstract</span> <span class="keyword">void</span> <span class="title function_">service</span><span class="params">(ServletRequest servletRequest, ServletResponse servletResponse)</span> <span class="keyword">throws</span> ServletException, IOException;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">public</span> String <span class="title function_">getServletInfo</span><span class="params">()</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">null</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">destroy</span><span class="params">()</span> &#123;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">ServletTest02</span> <span class="keyword">extends</span> <span class="title class_">GenericServletTest</span> &#123;</span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">service</span><span class="params">(ServletRequest servletRequest, ServletResponse servletResponse)</span> <span class="keyword">throws</span> ServletException, IOException &#123;</span><br><span class="line">        System.out.println(<span class="string">&quot;service方法被调用了。。。&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p><img src="C:\Users\liyi2\AppData\Roaming\Typora\typora-user-images\image-20220104110310838.png" alt="image-20220104110310838"></p>
-<h3 id="GenericServlet的优化"><a href="#GenericServlet的优化" class="headerlink" title="GenericServlet的优化"></a>GenericServlet的优化</h3><p>​		上述在对Servlet接口进行优化之后，形成的GenericServlet抽象类，之后我们的类就可以直接继承GenericServlet重写service方法，实现我们实际需求</p>
-<p>​		回看GenericServlet抽象类，总共就五个方法，其中的init方法，destroy方法，getServletConfig方法，getServletInfo方法并没有对其进行处理，这四个方法中，只有init方法是带参数的。</p>
-<p>​		创建自己的Servlet类继承GenericServlet，在运行tomcat的时候，init方法会被tomcat调用，但是init方法调用的时候需要传参，所以在调用init方法之前需要创建ServletConfig对象，可以写一下Tomcat的伪代码</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Tomcat</span>&#123;</span><br><span class="line">    </span><br><span class="line">    <span class="comment">//利用反射机制，创建Servlet类</span></span><br><span class="line">    <span class="type">Class</span> <span class="variable">clazz</span> <span class="operator">=</span> class.forName(<span class="string">&quot;com.xxx.xxx.ServletTest&quot;</span>);</span><br><span class="line">    <span class="type">Object</span> <span class="variable">obj</span> <span class="operator">=</span> clazz.newInstance();</span><br><span class="line">    <span class="type">Servlet</span> <span class="variable">servlet</span> <span class="operator">=</span> (Servlet)obj;</span><br><span class="line">    </span><br><span class="line">    <span class="comment">//创建ServletConfig对象</span></span><br><span class="line">    <span class="type">ServletConfig</span> <span class="variable">servletConfig</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">ServletComfigImpl</span>();</span><br><span class="line">    </span><br><span class="line">    <span class="comment">//调用init方法</span></span><br><span class="line">    servletConfig.init(serletConfig);</span><br><span class="line">    <span class="comment">//调用service方法</span></span><br><span class="line">    .....</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-
-
-<p>因为ServletConfig对象是在init方法中，是局部变量，如果需要在别的方法中如service方法中调用ServletConfig对象，就可以将ServletConfig定义为一个成员变量，然后再init方法中赋值，如果其他方法需要调用，就调用getServletConfig方法</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">abstract</span> <span class="keyword">class</span> <span class="title class_">GenericServletTest</span> <span class="keyword">implements</span> <span class="title class_">Servlet</span> &#123;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">private</span> ServletConfig servletConfig;</span><br><span class="line">    </span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">init</span><span class="params">(ServletConfig servletConfig)</span> <span class="keyword">throws</span> ServletException &#123;</span><br><span class="line">        <span class="built_in">this</span>.servletConfig = servletConfig;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">public</span> ServletConfig <span class="title function_">getServletConfig</span><span class="params">()</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> servletConfig;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">abstract</span> <span class="keyword">void</span> <span class="title function_">service</span><span class="params">(ServletRequest servletRequest, ServletResponse servletResponse)</span> <span class="keyword">throws</span> ServletException, IOException;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">public</span> String <span class="title function_">getServletInfo</span><span class="params">()</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">null</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">destroy</span><span class="params">()</span> &#123;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">ServletTest02</span> <span class="keyword">extends</span> <span class="title class_">GenericServletTest</span> &#123;</span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">service</span><span class="params">(ServletRequest servletRequest, ServletResponse servletResponse)</span> <span class="keyword">throws</span> ServletException, IOException &#123;</span><br><span class="line">        System.out.println(<span class="string">&quot;service方法被调用了。。。&quot;</span>);</span><br><span class="line">        </span><br><span class="line">        <span class="built_in">this</span>.getServletConfig();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-
-
-<p>在实际操作中，有可能需要重写init方法，但是在我们自己的Servlet类中重写init方法，ServletConfig对象就会是null</p>
-<p>解决方法：</p>
-<p>可以在init方法中再调用一个init方法</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Override</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">init</span><span class="params">(ServletConfig servletConfig)</span> <span class="keyword">throws</span> ServletException &#123;</span><br><span class="line">    <span class="built_in">this</span>.servletConfig = servletConfig;</span><br><span class="line">    <span class="built_in">this</span>.init();</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title function_">init</span><span class="params">()</span> <span class="keyword">throws</span> ServletException&#123;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-
-
-<p>这样我们就可以在我们自己的Servlet类中重写init方法，而且不会影响GenericServlet类中的init方法。</p>
-<h3 id="ServletConfig"><a href="#ServletConfig" class="headerlink" title="ServletConfig"></a>ServletConfig</h3><ul>
-<li><p>什么是ServletConfig</p>
-<ul>
-<li>ServletConfig是javax.servlet包下的一个接口，也是servlet规范中的一员</li>
-</ul>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> javax.servlet;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> java.util.Enumeration;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">interface</span> <span class="title class_">ServletConfig</span> &#123;</span><br><span class="line">    String <span class="title function_">getServletName</span><span class="params">()</span>;</span><br><span class="line"></span><br><span class="line">    ServletContext <span class="title function_">getServletContext</span><span class="params">()</span>;</span><br><span class="line"></span><br><span class="line">    String <span class="title function_">getInitParameter</span><span class="params">(String var1)</span>;</span><br><span class="line"></span><br><span class="line">    Enumeration&lt;String&gt; <span class="title function_">getInitParameterNames</span><span class="params">()</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-
-</li>
-<li><p>谁实现了ServletConfig接口</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">ServletConfigTest01</span> <span class="keyword">extends</span> <span class="title class_">GenericServlet</span> &#123;</span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">service</span><span class="params">(ServletRequest servletRequest, ServletResponse servletResponse)</span> <span class="keyword">throws</span> ServletException, IOException &#123;</span><br><span class="line">        servletResponse.setContentType(<span class="string">&quot;text/html;charset=utf-8&quot;</span>);</span><br><span class="line">        <span class="type">PrintWriter</span> <span class="variable">out</span> <span class="operator">=</span> servletResponse.getWriter();</span><br><span class="line">        out.print(<span class="string">&quot;Config对象是：&quot;</span> + <span class="built_in">this</span>.getServletConfig());</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
-</ul>
-<p>输出：</p>
-<figure class="highlight tex"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Config对象是：org.apache.catalina.core.StandardWrapperFacade@3d1a57e5</span><br></pre></td></tr></table></figure>
-
-
-
-<p>说明这个Config对象是Tomcat服务器创建的</p>
-<ul>
-<li>不同的servlet会不会共享一个ServletConfig对象？</li>
-</ul>
-<p>继续写一个Servlet，然后输出config对象</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">ServletConfigTest02</span> <span class="keyword">extends</span> <span class="title class_">GenericServlet</span> &#123;</span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">service</span><span class="params">(ServletRequest servletRequest, ServletResponse servletResponse)</span> <span class="keyword">throws</span> ServletException, IOException &#123;</span><br><span class="line">        servletResponse.setContentType(<span class="string">&quot;text/html;charset=utf-8&quot;</span>);</span><br><span class="line">        <span class="type">PrintWriter</span> <span class="variable">out</span> <span class="operator">=</span> servletResponse.getWriter();</span><br><span class="line">        out.print(<span class="string">&quot;config对象是：&quot;</span> + <span class="built_in">this</span>.getServletConfig());</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-
-
-<p>重新启动tomcat，调用service方法</p>
-<p>ServletConfigTest01输出：</p>
-<figure class="highlight tex"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Config对象是：org.apache.catalina.core.StandardWrapperFacade@79997fb1</span><br></pre></td></tr></table></figure>
-
-
-
-<p>ServletConfigTest02输出：</p>
-<figure class="highlight tex"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">config对象是：org.apache.catalina.core.StandardWrapperFacade@51f65d0f</span><br></pre></td></tr></table></figure>
-
-
-
-<p>所以不同的servlet的config对象不一样</p>
-<ul>
-<li><p>谁创建了config对象？什么时候创建的</p>
-<p>在上述中，tomcat在调用init方法时，会将servletconfig对象当参数传进去，所以是tomcat创建了config对象；而且，servlet对象的创建是在init方法之前，所以config对象和servlet对象是同时创建的</p>
-</li>
-<li><p>ServletConfig对象的作用</p>
-</li>
-</ul>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">String <span class="title function_">getServletName</span><span class="params">()</span>;<span class="comment">//读取servlet的名字</span></span><br><span class="line"></span><br><span class="line">ServletContext <span class="title function_">getServletContext</span><span class="params">()</span>;</span><br><span class="line"></span><br><span class="line">String <span class="title function_">getInitParameter</span><span class="params">(String var1)</span>;<span class="comment">//读取初始化参数</span></span><br><span class="line"></span><br><span class="line">Enumeration&lt;String&gt; <span class="title function_">getInitParameterNames</span><span class="params">()</span>;<span class="comment">//读取初始化参数名字</span></span><br></pre></td></tr></table></figure>
-
-
-
-<p>在web.xml中可以配置初始化信息，如：</p>
-<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">servlet</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">servlet-name</span>&gt;</span>servletConfigTest01<span class="tag">&lt;/<span class="name">servlet-name</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">servlet-class</span>&gt;</span>com.liyi.study.ServletConfigTest01<span class="tag">&lt;/<span class="name">servlet-class</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">init-param</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">param-name</span>&gt;</span>key1<span class="tag">&lt;/<span class="name">param-name</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">param-value</span>&gt;</span>value1<span class="tag">&lt;/<span class="name">param-value</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">init-param</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">init-param</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">param-name</span>&gt;</span>key2<span class="tag">&lt;/<span class="name">param-name</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">param-value</span>&gt;</span>value2<span class="tag">&lt;/<span class="name">param-value</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">init-param</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">init-param</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">param-name</span>&gt;</span>key3<span class="tag">&lt;/<span class="name">param-name</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">param-value</span>&gt;</span>value3<span class="tag">&lt;/<span class="name">param-value</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">init-param</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">servlet</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-
-
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">ServletConfigTest01</span> <span class="keyword">extends</span> <span class="title class_">GenericServlet</span> &#123;</span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">service</span><span class="params">(ServletRequest servletRequest, ServletResponse servletResponse)</span> <span class="keyword">throws</span> ServletException, IOException &#123;</span><br><span class="line">        servletResponse.setContentType(<span class="string">&quot;text/html;charset=utf-8&quot;</span>);</span><br><span class="line">        <span class="type">PrintWriter</span> <span class="variable">out</span> <span class="operator">=</span> servletResponse.getWriter();</span><br><span class="line">        <span class="type">ServletConfig</span> <span class="variable">servletConfig</span> <span class="operator">=</span> <span class="built_in">this</span>.getServletConfig();</span><br><span class="line">        out.print(<span class="string">&quot;Config对象是：&quot;</span> + servletConfig);</span><br><span class="line">        out.print(<span class="string">&quot;&lt;/br&gt;&quot;</span>);</span><br><span class="line">        Enumeration&lt;String&gt; initParameterNames = servletConfig.getInitParameterNames();</span><br><span class="line">        <span class="keyword">while</span>(initParameterNames.hasMoreElements())&#123;</span><br><span class="line">            out.print(initParameterNames.nextElement());</span><br><span class="line">            out.print(<span class="string">&quot;&lt;/br&gt;&quot;</span>);</span><br><span class="line">        &#125;</span><br><span class="line">        out.print(<span class="string">&quot;&lt;/br&gt;&quot;</span>);</span><br><span class="line">        out.print(servletConfig.getInitParameter(<span class="string">&quot;key1&quot;</span>));</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-
-
-<p>页面输出:</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">Config对象是：org.apache.catalina.core.StandardWrapperFacade@1af198</span><br><span class="line">key1</span><br><span class="line">key2</span><br><span class="line">key3</span><br><span class="line"></span><br><span class="line">value1</span><br></pre></td></tr></table></figure>
-
-
-
-<p>我们在GenericServlet中看到，里面有读取初始化参数的方法，所以我们不需要创建ServletConfig对象，只需要用this.getInitParameter();和this.getInitParameterNames();</p>
-<p>这个时候再回头看GenericServlet中的这两个方法:</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> String <span class="title function_">getInitParameter</span><span class="params">(String name)</span> &#123;</span><br><span class="line">     <span class="keyword">return</span> <span class="built_in">this</span>.getServletConfig().getInitParameter(name);</span><br><span class="line"> &#125;</span><br><span class="line"></span><br><span class="line"> <span class="keyword">public</span> Enumeration&lt;String&gt; <span class="title function_">getInitParameterNames</span><span class="params">()</span> &#123;</span><br><span class="line">     <span class="keyword">return</span> <span class="built_in">this</span>.getServletConfig().getInitParameterNames();</span><br><span class="line"> &#125;</span><br></pre></td></tr></table></figure>
-
-
-
-<p>一开始看的时候，我还在纳闷，为什么方法里面的return调用自己，如：getInitParameter中 </p>
-<figure class="highlight tex"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">return this.getServletConfig().getInitParameter(name)</span><br></pre></td></tr></table></figure>
-
-<p>调用本身，不会造成死循环吗？后来才知道，调用的是ServletConfig中的getInitParameter()方法；</p>
-<h3 id="ServletContext"><a href="#ServletContext" class="headerlink" title="ServletContext"></a>ServletContext</h3><ul>
-<li><p>什么是ServletContext？</p>
-<p>ServletContext是一个接口，是Servlet规范中的一员</p>
-</li>
-<li><p>谁实现了ServletContext接口？</p>
-</li>
-</ul>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">ServletContextTest01</span> <span class="keyword">extends</span> <span class="title class_">GenericServlet</span> &#123;</span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">service</span><span class="params">(ServletRequest servletRequest, ServletResponse servletResponse)</span> <span class="keyword">throws</span> ServletException, IOException &#123;</span><br><span class="line">        servletResponse.setContentType(<span class="string">&quot;text/html;charset=utf-8&quot;</span>);</span><br><span class="line">        <span class="type">PrintWriter</span> <span class="variable">out</span> <span class="operator">=</span> servletResponse.getWriter();</span><br><span class="line">        <span class="type">ServletContext</span> <span class="variable">application</span> <span class="operator">=</span> <span class="built_in">this</span>.getServletContext();</span><br><span class="line">        out.print(<span class="string">&quot;ServletContext对象是：&quot;</span> + application);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-
-
-<p>页面输出：</p>
-<figure class="highlight tex"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ServletContext对象是：org.apache.catalina.core.ApplicationContextFacade@1af198</span><br></pre></td></tr></table></figure>
-
-<p>看出这个是tomcat实现了这个接口</p>
-<ul>
-<li>不同的servlet，会共享一个servletContext对象吗？</li>
-</ul>
-<p>ServletContextTest01输出：</p>
-<figure class="highlight tex"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ServletContext对象是：org.apache.catalina.core.ApplicationContextFacade@1af198</span><br></pre></td></tr></table></figure>
-
-
-
-<p>ServletContextTest02输出：</p>
-<figure class="highlight tex"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ServletContext对象是：org.apache.catalina.core.ApplicationContextFacade@1af198</span><br></pre></td></tr></table></figure>
-
-
-
-<p>输出的对象都是一样的，所以不同的servlet会共享一个servletContext对象，整个webapp(可以理解为一整个web.xml中的servlet)都会只有一个servletContext对象，并且共享</p>
-<ul>
-<li>ServletContext对象什么时候创建，什么时候被销毁？</li>
-</ul>
-<p>因为ServletContext是共享的，所以在web服务器（tomcat）开启的时候被创建，在web服务器(tomcat)关闭的时候被销毁。</p>
-<ul>
-<li><p>ServletContext常用方法</p>
-<p><strong>1.获取参数名和值</strong></p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">String <span class="title function_">getInitParameter</span><span class="params">(String name)</span>;<span class="comment">//获取参数名对应的值</span></span><br><span class="line"></span><br><span class="line">Enumeration&lt;String&gt; <span class="title function_">getInitParameterNames</span><span class="params">()</span>;<span class="comment">//获取参数名</span></span><br></pre></td></tr></table></figure></li>
-</ul>
-<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">context-param</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">param-name</span>&gt;</span>pageSize<span class="tag">&lt;/<span class="name">param-name</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">param-value</span>&gt;</span>10<span class="tag">&lt;/<span class="name">param-value</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">context-param</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">context-param</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">param-name</span>&gt;</span>startIndex<span class="tag">&lt;/<span class="name">param-name</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">param-value</span>&gt;</span>1<span class="tag">&lt;/<span class="name">param-value</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">context-param</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">ServletContextTest01</span> <span class="keyword">extends</span> <span class="title class_">GenericServlet</span> &#123;</span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">service</span><span class="params">(ServletRequest servletRequest, ServletResponse servletResponse)</span> <span class="keyword">throws</span> ServletException, IOException &#123;</span><br><span class="line">        servletResponse.setContentType(<span class="string">&quot;text/html;charset=utf-8&quot;</span>);</span><br><span class="line">        <span class="type">PrintWriter</span> <span class="variable">out</span> <span class="operator">=</span> servletResponse.getWriter();</span><br><span class="line">        <span class="type">ServletContext</span> <span class="variable">application</span> <span class="operator">=</span> <span class="built_in">this</span>.getServletContext();</span><br><span class="line">        out.print(<span class="string">&quot;ServletContext对象是：&quot;</span> + application);</span><br><span class="line">        out.print(<span class="string">&quot;&lt;/br&gt;&quot;</span>);</span><br><span class="line"></span><br><span class="line">        <span class="comment">//获取参数名</span></span><br><span class="line">        Enumeration&lt;String&gt; initParameterNames = application.getInitParameterNames();</span><br><span class="line">        <span class="comment">//输出参数名和值</span></span><br><span class="line">        <span class="keyword">while</span>(initParameterNames.hasMoreElements())&#123;</span><br><span class="line">            <span class="type">String</span> <span class="variable">name</span> <span class="operator">=</span> initParameterNames.nextElement();</span><br><span class="line">            out.print(name);</span><br><span class="line">            out.print(<span class="string">&quot;&lt;/br&gt;&quot;</span>);</span><br><span class="line">            out.print(application.getInitParameter(name));</span><br><span class="line">            out.print(<span class="string">&quot;&lt;/br&gt;&quot;</span>);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>输出内容：</p>
-<figure class="highlight tex"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">ServletContext对象是：org.apache.catalina.core.ApplicationContextFacade@2d15921a</span><br><span class="line">startIndex</span><br><span class="line">1</span><br><span class="line">pageSize</span><br><span class="line">10</span><br></pre></td></tr></table></figure>
-
-
-
-
-
-<p><strong>2.获取应用的根路径</strong></p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">String <span class="title function_">getContextPath</span><span class="params">()</span>;<span class="comment">//获取应用的根路径（这个方法非常重要，在源码中可能需要获取应用的根路径，这个方法就可以动态获取，而不是写死）</span></span><br></pre></td></tr></table></figure>
-
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">String</span> <span class="variable">contextPath</span> <span class="operator">=</span> application.getContextPath();</span><br><span class="line">out.print(contextPath);</span><br><span class="line"><span class="comment">//输出：/servlet </span></span><br></pre></td></tr></table></figure>
-
-<p>这个根路径就是tomcat中配置的路径</p>
-<p><img src="C:\Users\liyi2\AppData\Roaming\Typora\typora-user-images\image-20220106164333714.png" alt="image-20220106164333714"></p>
-<p><strong>3.获取文件的绝对路径</strong></p>
-<p>首先现在web文件夹（web文件根目录）下添加一个index.html文件</p>
-<p><img src="C:\Users\liyi2\AppData\Roaming\Typora\typora-user-images\image-20220107095110016.png" alt="image-20220107095110016"></p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//获取文件的绝对路径</span></span><br><span class="line"><span class="type">String</span> <span class="variable">realPath</span> <span class="operator">=</span> application.getRealPath(<span class="string">&quot;/index.html&quot;</span>);</span><br><span class="line">out.print(realPath);</span><br></pre></td></tr></table></figure>
-
-<p>页面输出：</p>
-<figure class="highlight tex"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">D:<span class="keyword">\workspace</span><span class="keyword">\Servlet</span>-study<span class="keyword">\out</span><span class="keyword">\artifacts</span><span class="keyword">\Servlet</span>01<span class="built_in">_</span>war<span class="built_in">_</span>exploded<span class="keyword">\index</span>.html</span><br></pre></td></tr></table></figure>
-
-<p>在本机文件夹中搜索，发现文件确实存在并且路径正确</p>
-<p><img src="C:\Users\liyi2\AppData\Roaming\Typora\typora-user-images\image-20220107095739312.png" alt="image-20220107095739312"></p>
-<p><strong>参数中的“&#x2F;”是否可以不加呢？</strong></p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//获取文件的绝对路径</span></span><br><span class="line"><span class="type">String</span> <span class="variable">realPath</span> <span class="operator">=</span> application.getRealPath(<span class="string">&quot;index.html&quot;</span>);</span><br><span class="line">out.print(realPath);</span><br></pre></td></tr></table></figure>
-
-<p>页面输出：</p>
-<figure class="highlight tex"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">D:<span class="keyword">\workspace</span><span class="keyword">\Servlet</span>-study<span class="keyword">\out</span><span class="keyword">\artifacts</span><span class="keyword">\Servlet</span>01<span class="built_in">_</span>war<span class="built_in">_</span>exploded<span class="keyword">\index</span>.html</span><br></pre></td></tr></table></figure>
-
-
-
-<p><strong>说明不加”&#x2F;“也可以，这个”&#x2F;“相当于web目录，不加”&#x2F;“也是从web目录开始找</strong></p>
-<p>再试一下在web目录下创建一个common文件夹，在common文件夹下面创建一个common.html</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//获取文件的绝对路径</span></span><br><span class="line"><span class="type">String</span> <span class="variable">realPath</span> <span class="operator">=</span> application.getRealPath(<span class="string">&quot;/common/common.html&quot;</span>);</span><br><span class="line">out.print(realPath);</span><br><span class="line"></span><br><span class="line"><span class="comment">//输出：D:\workspace\Servlet-study\out\artifacts\Servlet01_war_exploded\common\common.html</span></span><br></pre></td></tr></table></figure>
-
-
-
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//获取文件的绝对路径</span></span><br><span class="line"><span class="type">String</span> <span class="variable">realPath</span> <span class="operator">=</span> application.getRealPath(<span class="string">&quot;common/common.html&quot;</span>);</span><br><span class="line">out.print(realPath);</span><br><span class="line"></span><br><span class="line"><span class="comment">//输出：D:\workspace\Servlet-study\out\artifacts\Servlet01_war_exploded\common\common.html</span></span><br></pre></td></tr></table></figure>
-
-
-
-
-
-<p>这个方法的作用就是动态获取文件的路径，比如说写流的时候，获取文件的绝对路径就可以通过这个方法获取。</p>
-<p>如果将文件的路径写死，程序就没有什么扩展性可言，或者将程序部署到linux环境下，文件的路径发生改变，写死也就无法获取到文件。</p>
-<p><strong>4.记录日志</strong></p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">void</span> <span class="title function_">log</span><span class="params">(String message)</span>;<span class="comment">//记录在tomcat下的logs目录下</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">void</span> <span class="title function_">log</span><span class="params">(String message, Throwable t)</span>;<span class="comment">//控制台不会有输出，会记录在tomcat的日志中</span></span><br></pre></td></tr></table></figure>
-
-<p>示例：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">application.log(<span class="string">&quot;你好！！！！&quot;</span>);</span><br><span class="line"></span><br><span class="line"><span class="type">int</span> <span class="variable">age</span> <span class="operator">=</span> <span class="number">17</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span>(age &lt; <span class="number">18</span>)&#123;</span><br><span class="line">    application.log(<span class="string">&quot;未成年，不允许访问！！！&quot;</span>,<span class="keyword">new</span> <span class="title class_">RuntimeException</span>(<span class="string">&quot;年龄不够哦！！！！&quot;</span>));</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-
-
-
-
-<p><strong>5.向ServletContext存储、取出、删除数据</strong></p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">Object <span class="title function_">getAttribute</span><span class="params">(String name)</span>;<span class="comment">//取出数据</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">void</span> <span class="title function_">setAttribute</span><span class="params">(String name, Object obj)</span>;<span class="comment">//存储数据</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">void</span> <span class="title function_">removeAttribute</span><span class="params">(String name)</span>;<span class="comment">//删除数据</span></span><br></pre></td></tr></table></figure>
-
-
-
-<p>servletContext对象又称为应用域，当所有的用户都共享一份数据的时候，并且这个数据很少被修改，而且数据量比较小时，我们一般将这种数据放在servletcontext应用域中。数据量大的话，太占用堆内存，并且context的生命周期较长，服务器关闭的时候，此对象才会被销毁，会影响服务器的性能。</p>
-<p>因为这种数据是所有用户共享的，如果出现修改频繁的现象的话，可能会出现线程安全问题。</p>
-<p>看到这些特点：数据量下、修改不频繁、所有用户共享。相当于一个缓存，就没必要去数据库中取数据，大大提高效率。</p>
-<h2 id="HttpServlet"><a href="#HttpServlet" class="headerlink" title="HttpServlet"></a>HttpServlet</h2><p>​		因为浏览器都是通过超文本协议进行传输，所以Servlet就专门定制了一个HttpServlet继承GenericServlet抽象类。</p>
-<p>​		一个Servlet类的生命周期是：</p>
-<p>​		1、首先是服务器启动的时候，创建一个servlet和servletContext对象</p>
-<p>​		2、调用init方法进行初始化</p>
-<p>​		3、在发送请求的时候会调用service方法</p>
-<p>​			第二次发送请求，会调用service方法</p>
-<p>​			第三次发送请求，会调用service方法</p>
-<p>​			………..</p>
-<p>​		4、服务器关闭的时候调用destroy方法</p>
-<p>HttpServlet也是遵循这样的生命周期：</p>
-<p>1、创建servlet对象</p>
-<p>2、调用init方法（HttpServlet中没有，调用父类GenericServlet方法）</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">init</span><span class="params">(ServletConfig config)</span> <span class="keyword">throws</span> ServletException &#123;</span><br><span class="line">    <span class="built_in">this</span>.config = config;</span><br><span class="line">    <span class="built_in">this</span>.init();</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">init</span><span class="params">()</span> <span class="keyword">throws</span> ServletException &#123;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
-
-<p>3、发送请求的时候，调用service方法</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//首先调用继承父类GenericServlet的service方法</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">service</span><span class="params">(ServletRequest req, ServletResponse res)</span> <span class="keyword">throws</span> ServletException, IOException &#123;</span><br><span class="line">    HttpServletRequest request;</span><br><span class="line">    HttpServletResponse response;</span><br><span class="line">    <span class="keyword">try</span> &#123;</span><br><span class="line">        request = (HttpServletRequest)req;</span><br><span class="line">        response = (HttpServletResponse)res;</span><br><span class="line">    &#125; <span class="keyword">catch</span> (ClassCastException var6) &#123;</span><br><span class="line">        <span class="keyword">throw</span> <span class="keyword">new</span> <span class="title class_">ServletException</span>(lStrings.getString(<span class="string">&quot;http.non_http&quot;</span>));</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="built_in">this</span>.service(request, response);<span class="comment">//调用带有Http的service方法</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//带有Http的service方法</span></span><br><span class="line"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title function_">service</span><span class="params">(HttpServletRequest req, HttpServletResponse resp)</span> <span class="keyword">throws</span> ServletException, IOException &#123;</span><br><span class="line">    </span><br><span class="line">        <span class="type">String</span> <span class="variable">method</span> <span class="operator">=</span> req.getMethod();<span class="comment">//调用请求方法</span></span><br><span class="line">    </span><br><span class="line">        <span class="type">long</span> lastModified;</span><br><span class="line">    	<span class="comment">//里面的doGet等七个请求方式，都是采用模板的方式，需要怎么样调用，可以自己重写</span></span><br><span class="line">        <span class="keyword">if</span> (method.equals(<span class="string">&quot;GET&quot;</span>)) &#123;</span><br><span class="line">            lastModified = <span class="built_in">this</span>.getLastModified(req);</span><br><span class="line">            <span class="keyword">if</span> (lastModified == -<span class="number">1L</span>) &#123;</span><br><span class="line">                <span class="built_in">this</span>.doGet(req, resp);</span><br><span class="line">            &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                <span class="type">long</span> ifModifiedSince;</span><br><span class="line">                <span class="keyword">try</span> &#123;</span><br><span class="line">                    ifModifiedSince = req.getDateHeader(<span class="string">&quot;If-Modified-Since&quot;</span>);</span><br><span class="line">                &#125; <span class="keyword">catch</span> (IllegalArgumentException var9) &#123;</span><br><span class="line">                    ifModifiedSince = -<span class="number">1L</span>;</span><br><span class="line">                &#125;</span><br><span class="line"></span><br><span class="line">                <span class="keyword">if</span> (ifModifiedSince &lt; lastModified / <span class="number">1000L</span> * <span class="number">1000L</span>) &#123;</span><br><span class="line">                    <span class="built_in">this</span>.maybeSetLastModified(resp, lastModified);</span><br><span class="line">                    <span class="built_in">this</span>.doGet(req, resp);</span><br><span class="line">                &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                    resp.setStatus(<span class="number">304</span>);</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125; <span class="keyword">else</span> <span class="keyword">if</span> (method.equals(<span class="string">&quot;HEAD&quot;</span>)) &#123;</span><br><span class="line">            lastModified = <span class="built_in">this</span>.getLastModified(req);</span><br><span class="line">            <span class="built_in">this</span>.maybeSetLastModified(resp, lastModified);</span><br><span class="line">            <span class="built_in">this</span>.doHead(req, resp);</span><br><span class="line">        &#125; <span class="keyword">else</span> <span class="keyword">if</span> (method.equals(<span class="string">&quot;POST&quot;</span>)) &#123;</span><br><span class="line">            <span class="built_in">this</span>.doPost(req, resp);</span><br><span class="line">        &#125; <span class="keyword">else</span> <span class="keyword">if</span> (method.equals(<span class="string">&quot;PUT&quot;</span>)) &#123;</span><br><span class="line">            <span class="built_in">this</span>.doPut(req, resp);</span><br><span class="line">        &#125; <span class="keyword">else</span> <span class="keyword">if</span> (method.equals(<span class="string">&quot;DELETE&quot;</span>)) &#123;</span><br><span class="line">            <span class="built_in">this</span>.doDelete(req, resp);</span><br><span class="line">        &#125; <span class="keyword">else</span> <span class="keyword">if</span> (method.equals(<span class="string">&quot;OPTIONS&quot;</span>)) &#123;</span><br><span class="line">            <span class="built_in">this</span>.doOptions(req, resp);</span><br><span class="line">        &#125; <span class="keyword">else</span> <span class="keyword">if</span> (method.equals(<span class="string">&quot;TRACE&quot;</span>)) &#123;</span><br><span class="line">            <span class="built_in">this</span>.doTrace(req, resp);</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            <span class="type">String</span> <span class="variable">errMsg</span> <span class="operator">=</span> lStrings.getString(<span class="string">&quot;http.method_not_implemented&quot;</span>);</span><br><span class="line">            Object[] errArgs = <span class="keyword">new</span> <span class="title class_">Object</span>[]&#123;method&#125;;</span><br><span class="line">            errMsg = MessageFormat.format(errMsg, errArgs);</span><br><span class="line">            resp.sendError(<span class="number">501</span>, errMsg);</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
-
-
-
-<p>简单示例：</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE <span class="keyword">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">&quot;en&quot;</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">&quot;UTF-8&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">title</span>&gt;</span>Hello<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">form</span> <span class="attr">action</span>=<span class="string">&quot;/servlet/helloServlet&quot;</span> <span class="attr">method</span>=<span class="string">&quot;get&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&quot;submit&quot;</span> <span class="attr">value</span>=<span class="string">&quot;login&quot;</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">form</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-
-
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">HelloServlet</span> <span class="keyword">extends</span> <span class="title class_">HttpServlet</span> &#123;</span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">protected</span> <span class="keyword">void</span> <span class="title function_">doGet</span><span class="params">(HttpServletRequest req, HttpServletResponse resp)</span> <span class="keyword">throws</span> ServletException, IOException &#123;</span><br><span class="line">        resp.setContentType(<span class="string">&quot;text/html;charset=utf-8&quot;</span>);</span><br><span class="line">        <span class="type">PrintWriter</span> <span class="variable">out</span> <span class="operator">=</span> resp.getWriter();</span><br><span class="line">        out.print(<span class="string">&quot;&lt;h1&gt;登录成功...&lt;/h1&gt;&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">protected</span> <span class="keyword">void</span> <span class="title function_">doPost</span><span class="params">(HttpServletRequest req, HttpServletResponse resp)</span> <span class="keyword">throws</span> ServletException, IOException &#123;</span><br><span class="line">        <span class="built_in">super</span>.doPost(req, resp);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-
-
-<p>访问</p>
-<figure class="highlight tex"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">http://localhost:8080/servlet/helloServlet.html</span><br></pre></td></tr></table></figure>
-
-<p>点击”login”按钮，就会显示</p>
-<p><img src="C:\Users\liyi2\AppData\Roaming\Typora\typora-user-images\image-20220111151304236.png" alt="image-20220111151304236"></p>
-<h3 id="HttpServletRequest"><a href="#HttpServletRequest" class="headerlink" title="HttpServletRequest"></a>HttpServletRequest</h3><p>​		HttpServletRequest接口继承ServletRequest接口，并且tomcat服务器实现了此接口，我们才能直接调用请求对象里面的方法。</p>
-<p>​		HttpServletRequest中封装了所有的请求信息。</p>
-<p>​		HttpServletRequest对象的生命周期很短暂。请求结束，对象就会被销毁。每发一次请求，就会创建一次请求对象。</p>
-<ul>
-<li><p>常用方法</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">String <span class="title function_">getParameter</span><span class="params">(String name)</span>;<span class="comment">//获取参数(用的较多)</span></span><br><span class="line"></span><br><span class="line">Enumeration&lt;String&gt; <span class="title function_">getParameterNames</span><span class="params">()</span>;<span class="comment">//获取参数名</span></span><br><span class="line"></span><br><span class="line">String[] getParameterValues(String name);<span class="comment">//获取参数值</span></span><br><span class="line"></span><br><span class="line">Map&lt;String, String[]&gt; getParameterMap();</span><br><span class="line"></span><br><span class="line">RequestDispatcher <span class="title function_">getRequestDispatcher</span><span class="params">(String var1)</span>;;<span class="comment">//转发器，请求转发</span></span><br></pre></td></tr></table></figure></li>
-</ul>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">form</span> <span class="attr">action</span>=<span class="string">&quot;/servlet/helloServlet&quot;</span> <span class="attr">method</span>=<span class="string">&quot;post&quot;</span>&gt;</span></span><br><span class="line">    用户名<span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&quot;text&quot;</span> <span class="attr">name</span>=<span class="string">&quot;username&quot;</span>&gt;</span><span class="tag">&lt;<span class="name">br</span>&gt;</span></span><br><span class="line">    密码<span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&quot;password&quot;</span> <span class="attr">name</span>=<span class="string">&quot;pwd&quot;</span>&gt;</span><span class="tag">&lt;<span class="name">br</span>&gt;</span></span><br><span class="line">    爱好</span><br><span class="line">        抽烟<span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&quot;checkbox&quot;</span> <span class="attr">name</span>=<span class="string">&quot;hobby&quot;</span> <span class="attr">value</span>=<span class="string">&quot;a&quot;</span>&gt;</span></span><br><span class="line">        喝酒<span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&quot;checkbox&quot;</span> <span class="attr">name</span>=<span class="string">&quot;hobby&quot;</span> <span class="attr">value</span>=<span class="string">&quot;b&quot;</span>&gt;</span></span><br><span class="line">        烫头<span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&quot;checkbox&quot;</span> <span class="attr">name</span>=<span class="string">&quot;hobby&quot;</span> <span class="attr">value</span>=<span class="string">&quot;c&quot;</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">br</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&quot;submit&quot;</span> <span class="attr">value</span>=<span class="string">&quot;注册&quot;</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">form</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-<p>假如在前端发送请求，创建一个form表单，发送请求，请求参数是：</p>
-<figure class="highlight tex"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">uesername=123<span class="built_in">&amp;</span>pwd=123<span class="built_in">&amp;</span>hobby=a<span class="built_in">&amp;</span>hobby=b<span class="built_in">&amp;</span>hobby=c</span><br></pre></td></tr></table></figure>
-
-<p>从传的参数可以看出，这里请求的数据是key-value的格式，我们后端就可以用map去接收</p>
-<p>​						key       				value</p>
-<p>​					username				123</p>
-<p>​					pwd						  123</p>
-<p>​					hobby						a</p>
-<p>​					hobby						b</p>
-<p>​					hobby						c</p>
-<p>但是map形式，key不可以重复，上面的方法就不可以实现了，于是就想到了可以用一维数组接收</p>
-<p>​						key       				value</p>
-<p>​					username				{“123”}</p>
-<p>​					pwd						  {“123”}</p>
-<p>​					hobby						{“a”,”b”,”c”}</p>
-<p>这样就可以避免key重复，于是就有了上面的方法：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Map&lt;String, String[]&gt; getParameterMap();</span><br></pre></td></tr></table></figure>
-
-
-
-<p><strong>转发器：</strong></p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">RequestDispatcher <span class="title function_">getRequestDispatcher</span><span class="params">(String path)</span>;<span class="comment">//获取转发器</span></span><br></pre></td></tr></table></figure>
-
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">RequestDispatcher</span> <span class="variable">requestDispatcher</span> <span class="operator">=</span> request.getRequestDispatcher(<span class="string">&quot;/b&quot;</span>);<span class="comment">//参数可以是servlet对应url-pattern，也可以是静态资源如html</span></span><br><span class="line">requestDispatcher.forward(request,response);<span class="comment">//将此servlet中的请求对象和响应对象传给需要转发的页面或者servlet</span></span><br></pre></td></tr></table></figure>
-
-
-
-<p>其实都在想，为什么不能在AServlet中创建一个Bservlet对象，然后将请求对象request和响应对象response传进去，如：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">BServlet</span> <span class="variable">bServlet</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">BServlet</span>();</span><br><span class="line">bServlet.forward(requset,response);</span><br></pre></td></tr></table></figure>
-
-<p>这样肯定是不行的，因为这里的BServlet是我们自己创建的，并不是Tomcat托管的，这样是不能实现共享的。</p>
-<p>但是这样的做法大概就是转发器的思想原理。</p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2022/08/18/%E9%9B%86%E5%90%88/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="John Doe">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hexo">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2022/08/18/%E9%9B%86%E5%90%88/" class="post-title-link" itemprop="url">Untitled</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              <time title="Created: 2022-08-18 13:30:00" itemprop="dateCreated datePublished" datetime="2022-08-18T13:30:00+08:00">2022-08-18</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2022-03-07 13:54:39" itemprop="dateModified" datetime="2022-03-07T13:54:39+08:00">2022-03-07</time>
-              </span>
 
           
 
@@ -718,9 +185,9 @@
 
       
           <h1 id="集合"><a href="#集合" class="headerlink" title="集合"></a>集合</h1><h3 id="1、集合框架"><a href="#1、集合框架" class="headerlink" title="1、集合框架"></a>1、集合框架</h3><p>单列集合</p>
-<p><img src="C:\Users\liyi2\AppData\Roaming\Typora\typora-user-images\image-20211118143738640.png" alt="image-20211118143738640"></p>
+<p><img src="/2022/08/19/%E9%9B%86%E5%90%88/image-20211118143738640.png" alt="image-20211118143738640"></p>
 <p>双列集合</p>
-<p><img src="C:\Users\liyi2\AppData\Roaming\Typora\typora-user-images\image-20211115160028364.png" alt="image-20211115160028364"> </p>
+<p><img src="/2022/08/19/%E9%9B%86%E5%90%88/image-20211115160028364.png" alt="image-20211115160028364"> </p>
 <h3 id="2、集合方法"><a href="#2、集合方法" class="headerlink" title="2、集合方法"></a>2、集合方法</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">List</span> <span class="variable">list</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">ArrayList</span>();</span><br><span class="line">     <span class="comment">//添加元素</span></span><br><span class="line">     list.add(<span class="string">&quot;liyi&quot;</span>);</span><br><span class="line">     list.add(<span class="string">&quot;李燚&quot;</span>);</span><br><span class="line">     System.out.println(list);</span><br><span class="line">     <span class="comment">//删除元素</span></span><br><span class="line">     list.remove(<span class="number">0</span>);<span class="comment">//按照下标删除元素</span></span><br><span class="line">     list.remove(<span class="string">&quot;李燚&quot;</span>);<span class="comment">//删除指定元素</span></span><br><span class="line">     System.out.println(list);</span><br><span class="line">     <span class="comment">//查看是否有指定元素</span></span><br><span class="line">     System.out.println(list.contains(<span class="string">&quot;liyi&quot;</span>));</span><br><span class="line">     <span class="comment">//获取元素的个数</span></span><br><span class="line">     System.out.println(list.size());</span><br><span class="line">     <span class="comment">//判断是否为空</span></span><br><span class="line">     System.out.println(list.isEmpty());</span><br><span class="line">     <span class="comment">//清空集合</span></span><br><span class="line">     list.clear();</span><br><span class="line">     System.out.println(list);</span><br><span class="line">     <span class="comment">//添加多个元素</span></span><br><span class="line">     <span class="type">List</span> <span class="variable">list1</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">ArrayList</span>();</span><br><span class="line">     list1.add(<span class="string">&quot;1111&quot;</span>);</span><br><span class="line">     list1.add(<span class="string">&quot;2222&quot;</span>);</span><br><span class="line">     list.addAll(list1);</span><br><span class="line">     System.out.println(list);</span><br><span class="line">     <span class="comment">//判断是否包含多个元素</span></span><br><span class="line">     System.out.println(list.containsAll(list1));</span><br><span class="line">     <span class="comment">//删除多个元素</span></span><br><span class="line">     list.removeAll(list1);</span><br><span class="line">     System.out.println(list);</span><br></pre></td></tr></table></figure>
 
 
@@ -728,8 +195,8 @@
 <p>注意：在实验中发现一个问题，list中对应的“李燚”的元素对应的下标应该是1，但是这样写就会出现错误</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">List</span> <span class="variable">list</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">ArrayList</span>();</span><br><span class="line">      <span class="comment">//添加元素</span></span><br><span class="line">      list.add(<span class="string">&quot;liyi&quot;</span>);</span><br><span class="line">      list.add(<span class="string">&quot;李燚&quot;</span>);</span><br><span class="line">      System.out.println(list);</span><br><span class="line">      <span class="comment">//删除元素</span></span><br><span class="line">      list.remove(<span class="number">0</span>);</span><br><span class="line">      list.remove(<span class="number">1</span>);</span><br></pre></td></tr></table></figure>
 
-<p><img src="C:\Users\liyi2\AppData\Roaming\Typora\typora-user-images\image-20211115163206383.png" alt="image-20211115163206383"></p>
-<h3 id="3、集合的遍历"><a href="#3、集合的遍历" class="headerlink" title="3、集合的遍历"></a>3、集合的遍历</h3><p><img src="C:\Users\liyi2\AppData\Roaming\Typora\typora-user-images\image-20211115170358163.png" alt="image-20211115170358163"></p>
+<p><img src="/2022/08/19/%E9%9B%86%E5%90%88/image-20211115163206383.png" alt="image-20211115163206383"></p>
+<h3 id="3、集合的遍历"><a href="#3、集合的遍历" class="headerlink" title="3、集合的遍历"></a>3、集合的遍历</h3><p><img src="/2022/08/19/%E9%9B%86%E5%90%88/image-20211115170358163.png" alt="image-20211115170358163"></p>
 <p>Iterator.hasNext()方法，判断是否还有下一个元素</p>
 <p>Iterator.next()方法，将指针下一到下一个元素，并将这个元素返回</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">Collection</span> <span class="variable">col</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">ArrayList</span>();</span><br><span class="line"></span><br><span class="line">      col.add(<span class="string">&quot;AAA&quot;</span>);</span><br><span class="line">      col.add(<span class="string">&quot;BBB&quot;</span>);</span><br><span class="line">      col.add(<span class="string">&quot;CCC&quot;</span>);</span><br><span class="line">      col.add(<span class="string">&quot;DDD&quot;</span>);</span><br><span class="line"></span><br><span class="line">      <span class="type">Iterator</span> <span class="variable">iterator</span> <span class="operator">=</span> col.iterator();</span><br><span class="line">      </span><br><span class="line">      <span class="keyword">while</span> (iterator.hasNext())&#123;</span><br><span class="line">          System.out.println(iterator.next());</span><br><span class="line">      &#125;</span><br></pre></td></tr></table></figure>
@@ -743,12 +210,12 @@
 <p>Object只是编译是状态，运行时状态还需要看集合本身</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">Collection</span> <span class="variable">col</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">ArrayList</span>();</span><br><span class="line"></span><br><span class="line">col.add(<span class="keyword">new</span> <span class="title class_">Book</span>(<span class="string">&quot;红楼梦&quot;</span>,<span class="number">11.2</span>));</span><br><span class="line">col.add(<span class="keyword">new</span> <span class="title class_">Book</span>(<span class="string">&quot;三国志&quot;</span>,<span class="number">22.2</span>));</span><br><span class="line">col.add(<span class="keyword">new</span> <span class="title class_">Book</span>(<span class="string">&quot;西游记&quot;</span>,<span class="number">33.3</span>));</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span>(Object obj : col)&#123;</span><br><span class="line">    System.out.println(obj);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Book</span>&#123;</span><br><span class="line">    <span class="keyword">private</span> String name;</span><br><span class="line">    <span class="keyword">private</span> <span class="type">double</span> price;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="title function_">Book</span><span class="params">(String name, <span class="type">double</span> price)</span> &#123;</span><br><span class="line">        <span class="built_in">this</span>.name = name;</span><br><span class="line">        <span class="built_in">this</span>.price = price;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">public</span> String <span class="title function_">toString</span><span class="params">()</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="string">&quot;Book&#123;&quot;</span> +</span><br><span class="line">            <span class="string">&quot;name=&#x27;&quot;</span> + name + <span class="string">&#x27;\&#x27;&#x27;</span> +</span><br><span class="line">            <span class="string">&quot;, price=&quot;</span> + price +</span><br><span class="line">            <span class="string">&#x27;&#125;&#x27;</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<p><img src="C:\Users\liyi2\AppData\Roaming\Typora\typora-user-images\image-20211116095825751.png" alt="image-20211116095825751"></p>
+<p><img src="/2022/08/19/%E9%9B%86%E5%90%88/image-20211116095825751.png" alt="image-20211116095825751"></p>
 <p><strong>debug增强for循环，可以看到增强for循环的底层还是用了Iterator迭代器</strong></p>
 <h2 id="一、List"><a href="#一、List" class="headerlink" title="一、List"></a>一、List</h2><h3 id="1、List集合和常用方法"><a href="#1、List集合和常用方法" class="headerlink" title="1、List集合和常用方法"></a>1、List集合和常用方法</h3><p><strong>list集合类中的元素是有序(存入的顺序和取出的顺序是一样的)可重复的</strong></p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">List</span> <span class="variable">list</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">ArrayList</span>();</span><br><span class="line">list.add(<span class="string">&quot;三国演义&quot;</span>);</span><br><span class="line">list.add(<span class="string">&quot;红楼梦&quot;</span>);</span><br><span class="line">list.add(<span class="string">&quot;西游记&quot;</span>);</span><br><span class="line">list.add(<span class="string">&quot;水浒传&quot;</span>);</span><br><span class="line">list.add(<span class="string">&quot;西游记&quot;</span>);</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> (Object obj : list) &#123;</span><br><span class="line">    System.out.println(obj);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<p><img src="C:\Users\liyi2\AppData\Roaming\Typora\typora-user-images\image-20211116144858836.png" alt="image-20211116144858836"></p>
+<p><img src="/2022/08/19/%E9%9B%86%E5%90%88/image-20211116144858836.png" alt="image-20211116144858836"></p>
 <p><strong>list中的每个元素都有其对应的顺序索引，即支持索引</strong></p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">list.get(<span class="number">3</span>);<span class="comment">//水浒传</span></span><br></pre></td></tr></table></figure>
 
@@ -792,21 +259,21 @@
 <h3 id="5、ArrayList的扩容机制"><a href="#5、ArrayList的扩容机制" class="headerlink" title="5、ArrayList的扩容机制"></a>5、ArrayList的扩容机制</h3><h4 id="1、无参构造"><a href="#1、无参构造" class="headerlink" title="1、无参构造"></a>1、无参构造</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//无参构造</span></span><br><span class="line"><span class="type">ArrayList</span> <span class="variable">arrayList</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">ArrayList</span>();</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span>(<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">0</span>;i &lt;= <span class="number">10</span> ;i++)&#123;</span><br><span class="line">    arrayList.add(i);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span>(<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">11</span> ;i &lt;= <span class="number">15</span> ;i++)&#123;</span><br><span class="line">    arrayList.add(i);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <p>第一 步：首先进入一个无参构造方法，将elementData赋值null</p>
-<p><img src="C:\Users\liyi2\AppData\Roaming\Typora\typora-user-images\image-20211117164928992.png" alt="image-20211117164928992"></p>
+<p><img src="/2022/08/19/%E9%9B%86%E5%90%88/image-20211117164928992.png" alt="image-20211117164928992"></p>
 <p>第二步：添加元素，首先会进行自动装箱（因为这边传的值是基本数据类型）</p>
-<p><img src="C:\Users\liyi2\AppData\Roaming\Typora\typora-user-images\image-20211117170800520.png" alt="image-20211117170800520"></p>
-<p><img src="C:\Users\liyi2\AppData\Roaming\Typora\typora-user-images\image-20211117170812249.png" alt="image-20211117170812249"></p>
+<p><img src="/2022/08/19/%E9%9B%86%E5%90%88/image-20211117170800520.png" alt="image-20211117170800520"></p>
+<p><img src="/2022/08/19/%E9%9B%86%E5%90%88/image-20211117170812249.png" alt="image-20211117170812249"></p>
 <p>第三步：调用add方法</p>
-<p><img src="C:\Users\liyi2\AppData\Roaming\Typora\typora-user-images\image-20211117170918201.png" alt="image-20211117170918201"></p>
+<p><img src="/2022/08/19/%E9%9B%86%E5%90%88/image-20211117170918201.png" alt="image-20211117170918201"></p>
 <p>第四步：调用add方法里面的ensureCapacityInternal()方法（确认容量的方法，是否需要扩容）</p>
-<p><img src="C:\Users\liyi2\AppData\Roaming\Typora\typora-user-images\image-20211117171941123.png" alt="image-20211117171941123"></p>
+<p><img src="/2022/08/19/%E9%9B%86%E5%90%88/image-20211117171941123.png" alt="image-20211117171941123"></p>
 <p>调用calculateCapacity()方法，选取DEFAULT_CAPACITY(10)和minCapacity中的最大值</p>
-<p><img src="C:\Users\liyi2\AppData\Roaming\Typora\typora-user-images\image-20211117172021443.png" alt="image-20211117172021443"></p>
+<p><img src="/2022/08/19/%E9%9B%86%E5%90%88/image-20211117172021443.png" alt="image-20211117172021443"></p>
 <p>调用ensureExplicitCapacity()方法，modCount是记录这个集合做了几次改变（多线程）</p>
 <p>进行判断，如果最小容量大于整个数组的长度，就会调用grow()方法</p>
-<p><img src="C:\Users\liyi2\AppData\Roaming\Typora\typora-user-images\image-20211117172314335.png" alt="image-20211117172314335"></p>
+<p><img src="/2022/08/19/%E9%9B%86%E5%90%88/image-20211117172314335.png" alt="image-20211117172314335"></p>
 <p>第五步：调用grow()方法【关键】</p>
-<p><img src="C:\Users\liyi2\AppData\Roaming\Typora\typora-user-images\image-20211117172651630.png" alt="image-20211117172651630"></p>
+<p><img src="/2022/08/19/%E9%9B%86%E5%90%88/image-20211117172651630.png" alt="image-20211117172651630"></p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//首先将数组长度赋值给老容量</span></span><br><span class="line"><span class="type">int</span> <span class="variable">oldCapacity</span> <span class="operator">=</span> elementData.length;</span><br></pre></td></tr></table></figure>
 
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//将容量扩容至1.5倍</span></span><br><span class="line"><span class="type">int</span> <span class="variable">newCapacity</span> <span class="operator">=</span> oldCapacity + (oldCapacity &gt;&gt; <span class="number">1</span>);</span><br></pre></td></tr></table></figure>
@@ -817,10 +284,10 @@
 
 <p>当集合中的元素已经到达容量时，在继续添加元素，就会自动扩容1.5倍</p>
 <h4 id="2、有参构造"><a href="#2、有参构造" class="headerlink" title="2、有参构造"></a>2、有参构造</h4><p>在创建集合的时候就给这个集合赋一个初始容量</p>
-<p><img src="C:\Users\liyi2\AppData\Roaming\Typora\typora-user-images\image-20211118103321163.png" alt="image-20211118103321163"></p>
+<p><img src="/2022/08/19/%E9%9B%86%E5%90%88/image-20211118103321163.png" alt="image-20211118103321163"></p>
 <p>同理，当元素已经到达容量时，继续向集合中添加元素，会自动扩容1.5倍</p>
-<p><img src="C:\Users\liyi2\AppData\Roaming\Typora\typora-user-images\image-20211117172651630.png" alt="image-20211117172651630"></p>
-<h4 id="3、transient（转瞬即逝的，瞬间的，临时的）"><a href="#3、transient（转瞬即逝的，瞬间的，临时的）" class="headerlink" title="3、transient（转瞬即逝的，瞬间的，临时的）"></a>3、transient（转瞬即逝的，瞬间的，临时的）</h4><h5 id="ArrayList-中维护了一个Object类型的数组-elementData-transient表示该属性无法被序列化"><a href="#ArrayList-中维护了一个Object类型的数组-elementData-transient表示该属性无法被序列化" class="headerlink" title="ArrayList 中维护了一个Object类型的数组 elementData,transient表示该属性无法被序列化"></a>ArrayList 中维护了一个Object类型的数组 elementData,transient表示该属性无法被序列化</h5><p><img src="C:\Users\liyi2\AppData\Roaming\Typora\typora-user-images\image-20211118141327746.png" alt="image-20211118141327746"></p>
+<p><img src="/2022/08/19/%E9%9B%86%E5%90%88/image-20211117172651630.png" alt="image-20211117172651630"></p>
+<h4 id="3、transient（转瞬即逝的，瞬间的，临时的）"><a href="#3、transient（转瞬即逝的，瞬间的，临时的）" class="headerlink" title="3、transient（转瞬即逝的，瞬间的，临时的）"></a>3、transient（转瞬即逝的，瞬间的，临时的）</h4><h5 id="ArrayList-中维护了一个Object类型的数组-elementData-transient表示该属性无法被序列化"><a href="#ArrayList-中维护了一个Object类型的数组-elementData-transient表示该属性无法被序列化" class="headerlink" title="ArrayList 中维护了一个Object类型的数组 elementData,transient表示该属性无法被序列化"></a>ArrayList 中维护了一个Object类型的数组 elementData,transient表示该属性无法被序列化</h5><p><img src="/2022/08/19/%E9%9B%86%E5%90%88/image-20211118141327746.png" alt="image-20211118141327746"></p>
 <p>###为什么elementData要添加一个transient让其无法被序列化？</p>
 <p>源码中，在elementData在序列化的时候，会调用wirteObject方法，将size和element写入ObjectOutputStream中，反序列化时调用readObject将size和element从ObjectInputStream取出来，再恢复到elementData。</p>
 <p>###为什么不直接序列化？</p>
@@ -842,18 +309,18 @@
 
 
 <p><strong>无参构造，看到底层是调用有参构造，设置一个默认容量是10</strong></p>
-<p><img src="C:\Users\liyi2\AppData\Roaming\Typora\typora-user-images\image-20211118144139944.png" alt="image-20211118144139944"></p>
-<p><img src="C:\Users\liyi2\AppData\Roaming\Typora\typora-user-images\image-20211118144555574.png" alt="image-20211118144555574"></p>
-<p><img src="C:\Users\liyi2\AppData\Roaming\Typora\typora-user-images\image-20211118144702435.png" alt="image-20211118144702435"></p>
+<p><img src="/2022/08/19/%E9%9B%86%E5%90%88/image-20211118144139944.png" alt="image-20211118144139944"></p>
+<p><img src="/2022/08/19/%E9%9B%86%E5%90%88/image-20211118144555574.png" alt="image-20211118144555574"></p>
+<p><img src="/2022/08/19/%E9%9B%86%E5%90%88/image-20211118144702435.png" alt="image-20211118144702435"></p>
 <p><strong>第一步：自动装箱</strong></p>
-<p><img src="C:\Users\liyi2\AppData\Roaming\Typora\typora-user-images\image-20211118151902266.png" alt="image-20211118151902266"></p>
+<p><img src="/2022/08/19/%E9%9B%86%E5%90%88/image-20211118151902266.png" alt="image-20211118151902266"></p>
 <p><strong>第二步：调用add()方法</strong></p>
 <p><strong>modCount是记录集合修改的次数</strong></p>
-<p><img src="C:\Users\liyi2\AppData\Roaming\Typora\typora-user-images\image-20211118152029181.png" alt="image-20211118152029181"></p>
+<p><img src="/2022/08/19/%E9%9B%86%E5%90%88/image-20211118152029181.png" alt="image-20211118152029181"></p>
 <p><strong>第三步：调用ensureCapacityHelper()</strong></p>
-<p><img src="C:\Users\liyi2\AppData\Roaming\Typora\typora-user-images\image-20211118152218580.png" alt="image-20211118152218580"></p>
+<p><img src="/2022/08/19/%E9%9B%86%E5%90%88/image-20211118152218580.png" alt="image-20211118152218580"></p>
 <p><strong>第四步：如果最小容量大于现在的集合的容量，调用grow()</strong></p>
-<p><img src="C:\Users\liyi2\AppData\Roaming\Typora\typora-user-images\image-20211118152412606.png" alt="image-20211118152412606"></p>
+<p><img src="/2022/08/19/%E9%9B%86%E5%90%88/image-20211118152412606.png" alt="image-20211118152412606"></p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//将容量扩容至2倍</span></span><br><span class="line"><span class="type">int</span> <span class="variable">newCapacity</span> <span class="operator">=</span> oldCapacity + ((capacityIncrement &gt; <span class="number">0</span>) ?</span><br><span class="line">                                 capacityIncrement : oldCapacity);</span><br></pre></td></tr></table></figure>
 
 
@@ -863,9 +330,9 @@
 
 
 <p><strong>给变量赋一个初始值</strong></p>
-<p><img src="C:\Users\liyi2\AppData\Roaming\Typora\typora-user-images\image-20211118152641212.png" alt="image-20211118152641212"></p>
+<p><img src="/2022/08/19/%E9%9B%86%E5%90%88/image-20211118152641212.png" alt="image-20211118152641212"></p>
 <p><strong>当容量达到上限时，自动扩容2倍</strong></p>
-<p><img src="C:\Users\liyi2\AppData\Roaming\Typora\typora-user-images\image-20211118153509159.png" alt="image-20211118153509159"></p>
+<p><img src="/2022/08/19/%E9%9B%86%E5%90%88/image-20211118153509159.png" alt="image-20211118153509159"></p>
 <p><strong>结论：创建Vector时，没有给初始容量，变会调用有参构造给一个默认的初始容量为10，当容量达到上限时，会自动扩容2倍</strong></p>
 <p>​			<strong>创建Vector时，给了初始容量，调用有参构造给定一个初始容量，当扩容达到上限时，就会自动扩容至2倍</strong></p>
 <p>ArrayList和Vector的区别，就是一个是线程安全的，一个是线程不安全的，Vector的扩容是2倍，ArrayList的扩容是1.5倍</p>
@@ -886,7 +353,7 @@
 
 
 <p><strong>简单模拟双向链表，遍历链表，添加元素</strong></p>
-<p><img src="C:\Users\liyi2\AppData\Roaming\Typora\typora-user-images\image-20211118171520855.png" alt="image-20211118171520855"></p>
+<p><img src="/2022/08/19/%E9%9B%86%E5%90%88/image-20211118171520855.png" alt="image-20211118171520855"></p>
 <p><strong>简单描述：first指向第一个节点的位置，第一个节点的后指针域指向下一个节点的位置，第二个节点的前指针域指向上一个节点的位置，后节点指向下一个节点的位置</strong></p>
 <p><strong>代码示例：</strong></p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br></pre></td><td class="code"><pre><span class="line">	<span class="type">Node</span> <span class="variable">name</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Node</span>(<span class="string">&quot;张三&quot;</span>);</span><br><span class="line">    <span class="type">Node</span> <span class="variable">age</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Node</span>(<span class="number">20</span>);</span><br><span class="line">    <span class="type">Node</span> <span class="variable">hobby</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Node</span>(<span class="string">&quot;网球&quot;</span>);</span><br><span class="line"></span><br><span class="line">    <span class="comment">//name -&gt; age -&gt; hobby</span></span><br><span class="line">    name.next = age;</span><br><span class="line">    age.next = hobby;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//name &lt;- age &lt;- hobby</span></span><br><span class="line">    age.pre = name;</span><br><span class="line">    hobby.pre = age;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//头指针first(简单描述)</span></span><br><span class="line">    <span class="type">Node</span> <span class="variable">first</span> <span class="operator">=</span> name;</span><br><span class="line">    <span class="comment">//尾指针last(简单描述)</span></span><br><span class="line">    <span class="type">Node</span> <span class="variable">last</span> <span class="operator">=</span> hobby;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//遍历(先序)</span></span><br><span class="line">    <span class="keyword">while</span>(first != <span class="literal">null</span>)&#123;</span><br><span class="line">        System.out.println(first);</span><br><span class="line">        first = first.next;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//遍历(后序)</span></span><br><span class="line">    <span class="keyword">while</span>(last != <span class="literal">null</span>)&#123;</span><br><span class="line">        System.out.println(last);</span><br><span class="line">        last = last.pre;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//添加元素(性别)</span></span><br><span class="line">    <span class="type">Node</span> <span class="variable">sex</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Node</span>(<span class="string">&quot;男&quot;</span>);</span><br><span class="line">    name.next = sex;</span><br><span class="line">    sex.pre = name;</span><br><span class="line">    sex.next = age;</span><br><span class="line">    age.pre = sex;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//遍历(先序)验证</span></span><br><span class="line">    <span class="keyword">while</span>(first != <span class="literal">null</span>)&#123;</span><br><span class="line">        System.out.println(first);</span><br><span class="line">        first = first.next;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">//节点类</span></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Node</span>&#123;</span><br><span class="line">    <span class="keyword">public</span> Object item;<span class="comment">//数据域，存储数据</span></span><br><span class="line">    <span class="keyword">public</span> Node pre;<span class="comment">//前节点</span></span><br><span class="line">    <span class="keyword">public</span> Node next;<span class="comment">//后节点</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="title function_">Node</span><span class="params">(Object item)</span> &#123;</span><br><span class="line">        <span class="built_in">this</span>.item = item;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">public</span> String <span class="title function_">toString</span><span class="params">()</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="string">&quot;Node&#123;&quot;</span> +</span><br><span class="line">                <span class="string">&quot;item=&quot;</span> + item +</span><br><span class="line">                <span class="string">&#x27;&#125;&#x27;</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
@@ -898,39 +365,39 @@
 
 
 <h4 id="添加元素"><a href="#添加元素" class="headerlink" title="添加元素"></a><strong>添加元素</strong></h4><p><strong>第一步：首先是调用add()方法</strong></p>
-<p><img src="C:\Users\liyi2\AppData\Roaming\Typora\typora-user-images\image-20211119144554722.png" alt="image-20211119144554722"></p>
+<p><img src="/2022/08/19/%E9%9B%86%E5%90%88/image-20211119144554722.png" alt="image-20211119144554722"></p>
 <p>第二步：调用linkLast()方法</p>
 <p>调用Node的有参构造</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//l表示前指针，e表示数据域，第三个参数是后指针</span></span><br><span class="line"><span class="keyword">final</span> Node&lt;E&gt; newNode = <span class="keyword">new</span> <span class="title class_">Node</span>&lt;&gt;(l, e, <span class="literal">null</span>);</span><br><span class="line"><span class="comment">//因为后指针是null，所以将这个新的节点放在最后</span></span><br><span class="line">last = newNode;</span><br><span class="line"><span class="comment">//如果前指针是null，就将头指针指向这个新节点</span></span><br><span class="line"><span class="keyword">if</span> (l == <span class="literal">null</span>)</span><br><span class="line">    first = newNode;</span><br><span class="line"><span class="keyword">else</span></span><br><span class="line">    l.next = newNode;</span><br><span class="line">size++;</span><br><span class="line">modCount++;</span><br></pre></td></tr></table></figure>
 
-<p><img src="C:\Users\liyi2\AppData\Roaming\Typora\typora-user-images\image-20211119144614498.png" alt="image-20211119144614498"></p>
-<p><img src="C:\Users\liyi2\AppData\Roaming\Typora\typora-user-images\image-20211119144711482.png" alt="image-20211119144711482"></p>
+<p><img src="/2022/08/19/%E9%9B%86%E5%90%88/image-20211119144614498.png" alt="image-20211119144614498"></p>
+<p><img src="/2022/08/19/%E9%9B%86%E5%90%88/image-20211119144711482.png" alt="image-20211119144711482"></p>
 <h4 id="删除元素-按照索引删除元素"><a href="#删除元素-按照索引删除元素" class="headerlink" title="删除元素(按照索引删除元素)"></a><strong>删除元素</strong>(<strong>按照索引删除元素</strong>)</h4><p><strong>第一步：调用remove()方法</strong></p>
-<p><img src="C:\Users\liyi2\AppData\Roaming\Typora\typora-user-images\image-20211119161158022.png" alt="image-20211119161158022"></p>
+<p><img src="/2022/08/19/%E9%9B%86%E5%90%88/image-20211119161158022.png" alt="image-20211119161158022"></p>
 <p><strong>第二步：调用checkElementIndex()方法，查找索引</strong></p>
-<p><img src="C:\Users\liyi2\AppData\Roaming\Typora\typora-user-images\image-20211119161517799.png" alt="image-20211119161517799"></p>
+<p><img src="/2022/08/19/%E9%9B%86%E5%90%88/image-20211119161517799.png" alt="image-20211119161517799"></p>
 <p><strong>第三步：调用node()方法，判断元素的位置(index)</strong></p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">Node&lt;E&gt; <span class="title function_">node</span><span class="params">(<span class="type">int</span> index)</span> &#123;</span><br><span class="line">    <span class="comment">// assert isElementIndex(index);</span></span><br><span class="line">	<span class="comment">/*</span></span><br><span class="line"><span class="comment">	从中间查找索引位置</span></span><br><span class="line"><span class="comment">	*/</span></span><br><span class="line">    <span class="keyword">if</span> (index &lt; (size &gt;&gt; <span class="number">1</span>)) &#123;</span><br><span class="line">        Node&lt;E&gt; x = first;</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">0</span>; i &lt; index; i++)</span><br><span class="line">            x = x.next;</span><br><span class="line">        <span class="keyword">return</span> x;</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        Node&lt;E&gt; x = last;</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> size - <span class="number">1</span>; i &gt; index; i--)</span><br><span class="line">            x = x.prev;</span><br><span class="line">        <span class="keyword">return</span> x;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<p><img src="C:\Users\liyi2\AppData\Roaming\Typora\typora-user-images\image-20211119163356999.png" alt="image-20211119163356999"></p>
+<p><img src="/2022/08/19/%E9%9B%86%E5%90%88/image-20211119163356999.png" alt="image-20211119163356999"></p>
 <p><strong>第四步：调用unlink()</strong></p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line">E <span class="title function_">unlink</span><span class="params">(Node&lt;E&gt; x)</span> &#123;</span><br><span class="line"><span class="comment">// assert x != null;</span></span><br><span class="line"><span class="keyword">final</span> <span class="type">E</span> <span class="variable">element</span> <span class="operator">=</span> x.item;</span><br><span class="line"><span class="keyword">final</span> Node&lt;E&gt; next = x.next;</span><br><span class="line"><span class="keyword">final</span> Node&lt;E&gt; prev = x.prev;</span><br><span class="line"></span><br><span class="line"><span class="comment">//如果删除的节点的前指针是null，就将头指针指向下一个节点的内存地址，即要删除的节点的后指针</span></span><br><span class="line"><span class="comment">//如果删除的节点的前指针不是null，就将上一个节点的后指针指向下一个节点的内存地址，也就是要删除的节点的后指针</span></span><br><span class="line"><span class="keyword">if</span> (prev == <span class="literal">null</span>) &#123;</span><br><span class="line">first = next;</span><br><span class="line">&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">prev.next = next;</span><br><span class="line">x.prev = <span class="literal">null</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//如果下一个节点是null，就将尾指针指向上一个节点的内存地址</span></span><br><span class="line"><span class="comment">//如果下一个节点不是null，就将下一个节点的前指针指向上一个节点的内存地址</span></span><br><span class="line"><span class="keyword">if</span> (next == <span class="literal">null</span>) &#123;</span><br><span class="line">last = prev;</span><br><span class="line">&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">next.prev = prev;</span><br><span class="line">x.next = <span class="literal">null</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//将数据域删除，长度减一，集合的修改次数加一</span></span><br><span class="line">x.item = <span class="literal">null</span>;</span><br><span class="line">size--;</span><br><span class="line">modCount++;</span><br><span class="line"><span class="keyword">return</span> element;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<p><img src="C:\Users\liyi2\AppData\Roaming\Typora\typora-user-images\image-20211119161706739.png" alt="image-20211119161706739"></p>
+<p><img src="/2022/08/19/%E9%9B%86%E5%90%88/image-20211119161706739.png" alt="image-20211119161706739"></p>
 <h4 id="查找元素"><a href="#查找元素" class="headerlink" title="查找元素"></a>查找元素</h4><p><strong>第一步：调用get(int  index)方法</strong></p>
-<p><img src="C:\Users\liyi2\AppData\Roaming\Typora\typora-user-images\image-20211124110140423.png" alt="image-20211124110140423"></p>
+<p><img src="/2022/08/19/%E9%9B%86%E5%90%88/image-20211124110140423.png" alt="image-20211124110140423"></p>
 <p><strong>第二步：调用checkElementIndex(int  index)方法</strong></p>
-<p><img src="C:\Users\liyi2\AppData\Roaming\Typora\typora-user-images\image-20211124110320452.png" alt="image-20211124110320452"></p>
+<p><img src="/2022/08/19/%E9%9B%86%E5%90%88/image-20211124110320452.png" alt="image-20211124110320452"></p>
 <p><strong>判断是否是这个元素的索引(是否越界)</strong></p>
-<p><img src="C:\Users\liyi2\AppData\Roaming\Typora\typora-user-images\image-20211124110406858.png" alt="image-20211124110406858"></p>
+<p><img src="/2022/08/19/%E9%9B%86%E5%90%88/image-20211124110406858.png" alt="image-20211124110406858"></p>
 <p><strong>第三步：调用node()方法，返回元素</strong></p>
-<p><img src="C:\Users\liyi2\AppData\Roaming\Typora\typora-user-images\image-20211124110526735.png" alt="image-20211124110526735"></p>
+<p><img src="/2022/08/19/%E9%9B%86%E5%90%88/image-20211124110526735.png" alt="image-20211124110526735"></p>
 <h4 id="修改元素"><a href="#修改元素" class="headerlink" title="修改元素"></a>修改元素</h4><p><strong>第一步：调用set()方法</strong></p>
-<p><img src="C:\Users\liyi2\AppData\Roaming\Typora\typora-user-images\image-20211124110732095.png" alt="image-20211124110732095"></p>
+<p><img src="/2022/08/19/%E9%9B%86%E5%90%88/image-20211124110732095.png" alt="image-20211124110732095"></p>
 <p><strong>第二步：调用checkElementIndex()方法</strong></p>
-<p><img src="C:\Users\liyi2\AppData\Roaming\Typora\typora-user-images\image-20211124110903875.png" alt="image-20211124110903875"></p>
+<p><img src="/2022/08/19/%E9%9B%86%E5%90%88/image-20211124110903875.png" alt="image-20211124110903875"></p>
 <p><strong>第三步：调用node()方法，返回要被修改的元素</strong></p>
-<p><img src="C:\Users\liyi2\AppData\Roaming\Typora\typora-user-images\image-20211124111016023.png" alt="image-20211124111016023"></p>
+<p><img src="/2022/08/19/%E9%9B%86%E5%90%88/image-20211124111016023.png" alt="image-20211124111016023"></p>
 <p><strong>第四步：将原有的元素的数据域修改成想要的元素</strong></p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">E</span> <span class="variable">oldVal</span> <span class="operator">=</span> x.item;</span><br><span class="line">x.item = element;</span><br><span class="line"><span class="keyword">return</span> oldVal;</span><br></pre></td></tr></table></figure>
 
@@ -956,9 +423,9 @@
 <p><strong>3、set没有get()方法，所以不能进行普通的for循环遍历</strong></p>
 <p><strong>结论：由上述可以看出输出的顺序是一样的</strong></p>
 <h3 id="3、HashSet"><a href="#3、HashSet" class="headerlink" title="3、HashSet"></a>3、HashSet</h3><p>(1)HashSet实现了Set接口</p>
-<p><img src="C:\Users\liyi2\AppData\Roaming\Typora\typora-user-images\image-20211203152923931.png" alt="image-20211203152923931"></p>
+<p><img src="/2022/08/19/%E9%9B%86%E5%90%88/image-20211203152923931.png" alt="image-20211203152923931"></p>
 <p>(2)HashSet的底层是HashMap</p>
-<p><img src="C:\Users\liyi2\AppData\Roaming\Typora\typora-user-images\image-20211203153235963.png" alt="image-20211203153235963"></p>
+<p><img src="/2022/08/19/%E9%9B%86%E5%90%88/image-20211203153235963.png" alt="image-20211203153235963"></p>
 <p>HashMap的底层是数组+链表+红黑树</p>
 <p>简单模拟原理</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//创建一个数组 Node[]</span></span><br><span class="line">Node[] node = <span class="keyword">new</span> <span class="title class_">Node</span>[<span class="number">16</span>];<span class="comment">//初始值为16</span></span><br><span class="line"><span class="comment">// 创建新结点</span></span><br><span class="line"><span class="type">Node</span> <span class="variable">node1</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Node</span>(<span class="string">&quot;张三&quot;</span>, <span class="literal">null</span>);</span><br><span class="line"><span class="comment">//添加结点</span></span><br><span class="line">node[<span class="number">2</span>] = node1;</span><br><span class="line"><span class="comment">//添加新结点</span></span><br><span class="line"><span class="type">Node</span> <span class="variable">node2</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Node</span>(<span class="string">&quot;李四&quot;</span>,<span class="literal">null</span>);</span><br><span class="line"><span class="comment">//将新结点放在之前结点之后</span></span><br><span class="line">node1.next = node2;</span><br></pre></td></tr></table></figure>
@@ -967,7 +434,7 @@
 
 
 
-<p><img src="C:\Users\liyi2\AppData\Roaming\Typora\typora-user-images\image-20211206112621554.png" alt="image-20211206112621554"></p>
+<p><img src="/2022/08/19/%E9%9B%86%E5%90%88/image-20211206112621554.png" alt="image-20211206112621554"></p>
 <p>(3)可以存放null，但是只能存一个null值</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">HashSet</span> <span class="variable">hashSet</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">HashSet</span>();</span><br><span class="line">hashSet.add(<span class="literal">null</span>);</span><br><span class="line">hashSet.add(<span class="literal">null</span>);</span><br><span class="line">System.out.println(hashSet);</span><br><span class="line"><span class="comment">//输出的值是[null]</span></span><br></pre></td></tr></table></figure>
 
@@ -979,7 +446,7 @@
 <p>第一个疑问：添加元素的时候，如果是添加的相同的元素，是后添加的元素取代先添加的元素还是先检验之后发现元素重复，无法添加</p>
 <p>第二个疑问：不能添加重复值，这里的”重复”指的是什么</p>
 <p>点进add()方法进去之后看见返回值是boolean类型</p>
-<p><img src="C:\Users\liyi2\AppData\Roaming\Typora\typora-user-images\image-20211203160400967.png" alt="image-20211203160400967"></p>
+<p><img src="/2022/08/19/%E9%9B%86%E5%90%88/image-20211203160400967.png" alt="image-20211203160400967"></p>
 <p>示例一：</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">System.out.println(hashSet.add(<span class="string">&quot;张三&quot;</span>));<span class="comment">//true</span></span><br><span class="line">System.out.println(hashSet.add(<span class="string">&quot;李四&quot;</span>));<span class="comment">//true</span></span><br><span class="line">System.out.println(hashSet.add(<span class="string">&quot;王二&quot;</span>));<span class="comment">//true</span></span><br><span class="line">System.out.println(hashSet.add(<span class="string">&quot;张三&quot;</span>));<span class="comment">//false</span></span><br></pre></td></tr></table></figure>
 
@@ -1010,87 +477,7 @@
 <p>(2)找到索引位置，看索引位置是否有元素，如果没有元素就将其添加进去</p>
 <p>(3)如果有元素，就调用equals()方法进行比较，如果值相等，就不添加，值不相等，就添加</p>
 <p>(4)如果添加的元素到达8个，便会扩充表的容量（数组的容量），如果数组容量达到上限(64个)，便会将链表变成红黑树</p>
-<p><img src="C:\Users\liyi2\AppData\Roaming\Typora\typora-user-images\image-20211206144422689.png" alt="image-20211206144422689"></p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2022/08/18/apollo%E5%AE%89%E8%A3%85%E9%83%A8%E7%BD%B2/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="John Doe">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hexo">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2022/08/18/apollo%E5%AE%89%E8%A3%85%E9%83%A8%E7%BD%B2/" class="post-title-link" itemprop="url">Untitled</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              <time title="Created: 2022-08-18 13:28:43" itemprop="dateCreated datePublished" datetime="2022-08-18T13:28:43+08:00">2022-08-18</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2022-06-22 15:17:03" itemprop="dateModified" datetime="2022-06-22T15:17:03+08:00">2022-06-22</time>
-              </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h3 id="1-下载安装包"><a href="#1-下载安装包" class="headerlink" title="1.下载安装包"></a>1.下载安装包</h3><h3 id="2-上传到linux服务器"><a href="#2-上传到linux服务器" class="headerlink" title="2.上传到linux服务器"></a>2.上传到linux服务器</h3><h3 id="3-新增两个数据库ApolloConfigDB、ApolloPortalDB"><a href="#3-新增两个数据库ApolloConfigDB、ApolloPortalDB" class="headerlink" title="3.新增两个数据库ApolloConfigDB、ApolloPortalDB"></a>3.新增两个数据库ApolloConfigDB、ApolloPortalDB</h3><h3 id="4-解压apollo-configservice-1-9-2-github-zip到apollo-configservice目录"><a href="#4-解压apollo-configservice-1-9-2-github-zip到apollo-configservice目录" class="headerlink" title="4.解压apollo-configservice-1.9.2-github.zip到apollo-configservice目录"></a>4.解压apollo-configservice-1.9.2-github.zip到apollo-configservice目录</h3><p><img src="C:\Users\liyi2\AppData\Roaming\Typora\typora-user-images\image-20220622151050779.png" alt="image-20220622151050779"></p>
-<h3 id="5-修改config-x2F-application-github-properties文件"><a href="#5-修改config-x2F-application-github-properties文件" class="headerlink" title="5.修改config&#x2F;application-github.properties文件"></a>5.修改config&#x2F;application-github.properties文件</h3><p><img src="C:\Users\liyi2\AppData\Roaming\Typora\typora-user-images\image-20220622151118987.png" alt="image-20220622151118987"></p>
-<h3 id="6-修改数据源"><a href="#6-修改数据源" class="headerlink" title="6.修改数据源"></a>6.修改数据源</h3><p><img src="C:\Users\liyi2\AppData\Roaming\Typora\typora-user-images\image-20220622151142996.png" alt="image-20220622151142996"></p>
-<h3 id="7-启动apollo-configservice"><a href="#7-启动apollo-configservice" class="headerlink" title="7.启动apollo-configservice"></a>7.启动apollo-configservice</h3><p><img src="C:\Users\liyi2\AppData\Roaming\Typora\typora-user-images\image-20220622151203178.png" alt="image-20220622151203178"></p>
-<h3 id="8-解压apollo-adminservice"><a href="#8-解压apollo-adminservice" class="headerlink" title="8.解压apollo-adminservice"></a>8.解压apollo-adminservice</h3><p><img src="C:\Users\liyi2\AppData\Roaming\Typora\typora-user-images\image-20220622151237219.png" alt="image-20220622151237219"></p>
-<h3 id="9-修改config-x2F-application-github-properties文件"><a href="#9-修改config-x2F-application-github-properties文件" class="headerlink" title="9.修改config&#x2F;application-github.properties文件"></a>9.修改config&#x2F;application-github.properties文件</h3><p><img src="C:\Users\liyi2\AppData\Roaming\Typora\typora-user-images\image-20220622151255958.png" alt="image-20220622151255958"></p>
-<h3 id="10-修改数据源"><a href="#10-修改数据源" class="headerlink" title="10.修改数据源"></a>10.修改数据源</h3><p><img src="C:\Users\liyi2\AppData\Roaming\Typora\typora-user-images\image-20220622151316754.png" alt="image-20220622151316754"></p>
-<h3 id="11-启动apollo-adminservice"><a href="#11-启动apollo-adminservice" class="headerlink" title="11.启动apollo-adminservice"></a>11.启动apollo-adminservice</h3><p><img src="C:\Users\liyi2\AppData\Roaming\Typora\typora-user-images\image-20220622151341419.png" alt="image-20220622151341419"></p>
-<h3 id="12-解压apollo-portal"><a href="#12-解压apollo-portal" class="headerlink" title="12.解压apollo-portal"></a>12.解压apollo-portal</h3><p><img src="C:\Users\liyi2\AppData\Roaming\Typora\typora-user-images\image-20220622151459575.png" alt="image-20220622151459575"></p>
-<h3 id="13-修改config-x2F-application-github-properties文件"><a href="#13-修改config-x2F-application-github-properties文件" class="headerlink" title="13.修改config&#x2F;application-github.properties文件"></a>13.修改config&#x2F;application-github.properties文件</h3><p><img src="C:\Users\liyi2\AppData\Roaming\Typora\typora-user-images\image-20220622151522975.png" alt="image-20220622151522975"></p>
-<h3 id="14-修改数据源"><a href="#14-修改数据源" class="headerlink" title="14.修改数据源"></a>14.修改数据源</h3><p><img src="C:\Users\liyi2\AppData\Roaming\Typora\typora-user-images\image-20220622151539020.png" alt="image-20220622151539020"></p>
-<h3 id="15-修改meta-service信息"><a href="#15-修改meta-service信息" class="headerlink" title="15.修改meta service信息"></a>15.修改meta service信息</h3><p><img src="C:\Users\liyi2\AppData\Roaming\Typora\typora-user-images\image-20220622151608211.png" alt="image-20220622151608211"></p>
-<h3 id="16-启动apollo-portal"><a href="#16-启动apollo-portal" class="headerlink" title="16.启动apollo-portal"></a>16.启动apollo-portal</h3><p><img src="C:\Users\liyi2\AppData\Roaming\Typora\typora-user-images\image-20220622151637066.png" alt="image-20220622151637066"></p>
-<p>访问：<a target="_blank" rel="noopener" href="http://192.168.44.128:8070/">http://192.168.44.128:8070/</a> 账号&#x2F;密码：apollo&#x2F;admin</p>
-<p>vmware虚拟机下需要关闭防火墙才能访问</p>
-<p><img src="C:\Users\liyi2\AppData\Roaming\Typora\typora-user-images\image-20220622151701751.png" alt="image-20220622151701751"></p>
+<p><img src="/2022/08/19/%E9%9B%86%E5%90%88/image-20211206144422689.png" alt="image-20211206144422689"></p>
 
       
     </div>
@@ -1172,7 +559,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">3</span>
+          <span class="site-state-item-count">1</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
